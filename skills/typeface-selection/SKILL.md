@@ -65,7 +65,7 @@ certain way, from evidence:
 
 | Wanted tone | Visible signals to look for |
 |---|---|
-| Neutral, systematic | Neo-Grotesque; regular proportions, low contrast, closed-ish apertures |
+| Unobtrusive, systematic | Neo-Grotesque; regular proportions, low contrast, closed-ish apertures |
 | Technical, precise | Geometric or Grotesque sans; uniform stroke, circular rounds |
 | Humanist, warm | Angled axis, calligraphic trace, open apertures |
 | Editorial, authoritative | Transitional/Rational serif; vertical axis, higher contrast |
@@ -75,6 +75,24 @@ certain way, from evidence:
 Say the evidence out loud. "Feels modern" isn't a reason; "geometric construction,
 near-uniform stroke weight, circular bowls" is.
 
+**Do not say "neutral."** Rutter: "There's no such thing as a neutral typeface…
+You cannot wear neutral clothes. Boring, predictable, unadventurous and inoffensive,
+perhaps; but never neutral." Every choice carries a voice, and calling one neutral
+hides the decision. When a stakeholder asks for "something neutral," translate it:
+they want a face that *gets out of the way and lets the ideas shine through* — which
+Rutter notes is a demanding brief, since "any successful boring typeface will have
+been carefully designed to be highly readable." Say "unobtrusive" and mean it.
+
+**Classification analyses; genre finds.** There is no universal classification
+system, and no vendor lists faces under the descriptive terms designers use — you
+won't find "linear dynamic sans serif" as a browsable category. Use classification
+(`typeface-anatomy`) to describe and defend a face from evidence; use genre,
+description, and specimen browsing to *discover* candidates.
+
+**Make a specimen to reduce the shortlist.** Set the same real content in every
+candidate, at the real sizes, and compare them side by side in one document. This is
+the step people skip, and it is the one that actually eliminates candidates.
+
 **Building a palette** (Santa Maria). Keep a small personal set you know deeply
 rather than searching fresh each time. Knowing how a face behaves at 12px, in
 italic, in long German words, and under a fallback swap is worth more than novelty.
@@ -83,6 +101,20 @@ italic, in long German words, and under a fallback swap is worth more than novel
 and metric-matching at once. Strong default when a project needs both.
 
 **Variable fonts** collapse many weights into one file. See `variable-fonts`.
+
+**How the face renders on screen is part of the choice.** Rutter devotes a chapter
+to it, and the practical residue: accept the limits of screen resolution, accept
+that platforms render differently, and **check your type across platforms** rather
+than judging on your own machine. Delicate high-contrast faces and hairline weights
+are the first casualties on low-DPI displays.
+
+⚠️ One piece of the 2017 advice is stale. Rutter recommends disabling subpixel
+anti-aliasing (`-webkit-font-smoothing: antialiased`) *only* for reversed-out text,
+because light-on-dark rendered "an entire weight bolder" on low-resolution macOS.
+macOS removed subpixel anti-aliasing system-wide in Mojave (2018), so the specific
+condition no longer holds; the property is now used for consistency with the OS, not
+as a reversed-text fix. Verify current behavior before applying either. The
+underlying design point survives: **reversed text reads heavier, so test it.**
 
 **System font stacks** cost zero bytes and render natively. Legitimate for
 performance-critical and utility interfaces; they forfeit brand distinctiveness and
@@ -172,7 +204,11 @@ Unverified: <what wasn't rendered>
 - Lupton, *Thinking with Type* 3e — serif readability research is inconclusive;
   familiarity bias; typeface classification.
 - Rutter, *Web Typography* — choosing typefaces for screens; apparent size and
-  x-height compensation; OpenType and figure styles.
+  x-height compensation; OpenType and figure styles; **"there's no such thing as a
+  neutral typeface"**; "type genres are more useful than classifications"; make a
+  specimen to reduce your shortlist; judge typefaces in context; choose robust faces
+  for readability on screens; understand how fonts render on screens and check type
+  across platforms; clearly distinguish functional text from body text.
 - Latin, *Better Web Typography* — choosing typefaces; language-range considerations.
 - Stocks, *Universal Principles of Typography* — classification's uses and limits;
   width as a palette tool; "type should be legible" as a first principle.

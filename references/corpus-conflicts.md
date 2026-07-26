@@ -42,6 +42,46 @@ characteristics" — `a`/`d` and `n`/`h` grow harder to tell apart as x-height
 climbs. So x-height trades legibility of the *line* against distinguishability of
 the *letter*. Judge both.
 
+## Is there such a thing as a "neutral" typeface?
+
+**Rutter says no, flatly.** "You cannot make a choice that calls for a neutral
+typeface. This would imply your author is expressing no opinion, has nothing to say
+and their writing is deliberately soulless. You cannot wear neutral clothes.
+Boring, predictable, unadventurous and inoffensive, perhaps; but never neutral. Your
+decision to play it safe sartorially is nonetheless a decision and, by definition,
+not neutral."
+
+**Coles' classification language uses "neutral"** as a description of Neo-Grotesque
+sans faces, and the brief that produced this pack asks the agent to explain why a
+face reads "technical, humanist, editorial, neutral or expressive."
+
+**Resolution.** Rutter is rule 4; Coles is rule 8 — Rutter wins, and he is making a
+stronger point than a vocabulary quibble. Every type choice carries a voice; calling
+one "neutral" hides the decision from the client and from yourself.
+
+But both describe something real. Rutter concedes the useful version: what people
+mean is a face that "gets out of the way and lets the ideas shine through," and
+"any successful boring typeface will have been carefully designed to be highly
+readable." So:
+
+- Use **"unobtrusive"**, **"recedes"**, or **"gets out of the way"** — descriptions
+  of *effect*.
+- Avoid **"neutral"** — it claims an absence of voice that doesn't exist.
+- When a stakeholder asks for "something neutral", translate it: they want
+  unobtrusive and highly readable, which is a demanding brief, not an empty one.
+
+## Classification vs. genre
+
+Rutter: **"Type genres are more useful than classifications."** There is no
+universal classification system, and no font vendor groups faces under the
+descriptive terms designers actually use — you will not find a "linear dynamic sans
+serif" category on a foundry site. He compares it to pigeonholing musicians into
+genres: difficult and contentious.
+
+Coles' classification-by-visible-form is still the right tool for *describing what
+you see* and defending a choice from evidence. It is a poor tool for *finding* a
+face. Use classification to analyse, genre and description to search.
+
 ## Line-height ranges
 
 Latin gives 1.3–1.7 for body text and treats the relationship between size,

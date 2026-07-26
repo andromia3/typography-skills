@@ -156,6 +156,28 @@ justify text without hyphenating is to wilfully harm the reading experience."**
 Prefer automatic `hyphens: auto` with a correct `lang` attribute; reach for `&shy;`
 only for words the dictionary gets wrong.
 
+**Accents and diacritics are not optional.** Rutter: "if a word has an accent, use
+it," and "pay particular attention to accented names." Dropping the accent in a
+personal name is a correctness error and often a discourtesy — *Bronte* is not
+*Brontë*, *Beyonce* is not *Beyoncé*. Verify the shipping font actually carries the
+marks (see `typeface-selection`) and that the marks aren't clipped by a tight
+line-height (see `international-typography`).
+
+**Prefer UTF-8 characters to HTML entities.** Serve the page as UTF-8 and type the
+real character — `—`, `…`, `é`, `×`. Entities (`&mdash;`, `&hellip;`) make source
+unreadable, break search-and-replace, and are a legacy workaround. Automate the
+substitution at the content pipeline rather than asking authors to remember.
+
+**A few characters people reliably get wrong:**
+
+- Use a real **multiplication sign** `×` and **division sign** `÷`, not `x` and `/`.
+- Don't set **brackets and parentheses in italic** just because the enclosed text is
+  italic — the upright forms belong to the sentence, not the phrase.
+- Don't over-elaborate the **ampersand**. A decorative `&` is a display device; in
+  running text it's noise.
+- Delete **stray spaces before punctuation and at line ends** — they open holes and
+  shift the rag.
+
 **Punctuation quick table.**
 
 | Use | Character |

@@ -123,7 +123,7 @@ geometric in construction and display in intent. Don't force one bucket.
 | Class | Visible signals |
 |---|---|
 | Grotesque Sans | Structure like Transitional/Rational serifs, low contrast, oval rounds |
-| Neo-Grotesque Sans | Closed apertures, very regular, neutral |
+| Neo-Grotesque Sans | Closed apertures, very regular, recedes (often called "neutral" — see `typeface-selection`) |
 | Gothic Sans | American grotesque lineage; sturdy, relatively closed workhorse forms |
 | Humanist Sans | Calligraphic structure, often higher contrast than other sans, open apertures |
 | Neo-Humanist Sans | Larger x-height, very open apertures, less contrast |

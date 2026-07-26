@@ -85,6 +85,26 @@ apparent size; the three override descriptors force identical vertical metrics s
 the line box is unchanged across the swap. Tuned correctly the swap moves nothing
 and font-related CLS goes to zero. (Target: CLS < 0.1 overall.)
 
+**`font-size-adjust` — the other half of fallback matching.** Where `size-adjust` in
+`@font-face` scales a fallback to match the webfont, `font-size-adjust` on the
+element normalises apparent size by **aspect value** — the font's x-height divided by
+its font size. Rutter's note on why it's useful: it "only affects the rendered size
+of the text, not the reported or calculated size," so **line-height is unaffected**
+and the surrounding code stays simple.
+
+```css
+body { font-family: "Altis", Arial, sans-serif; font-size-adjust: 0.545; }
+/* modern syntax also allows a metric and from-font: */
+body { font-size-adjust: ex-height from-font; }
+```
+
+The current grammar is `none | [ ex-height | cap-height | ch-width | ic-width |
+ic-height ]? [ from-font | <number> ]`; `ex-height` is the default metric. Support is
+narrower than `size-adjust`, so treat it as an enhancement and verify on MDN before
+relying on it. Prefer `size-adjust` + the metric-override descriptors as the primary
+technique; reach for `font-size-adjust` when you want apparent-size normalisation
+without touching the line box.
+
 **Subsetting.** Cut to the scripts and characters you actually use — but never
 subset away characters real content needs. User-generated content, names, and
 currency symbols routinely break naive Latin-only subsets. `unicode-range` lets you

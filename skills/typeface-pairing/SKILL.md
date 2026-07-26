@@ -49,6 +49,18 @@ payload, its licence, and its maintenance.
 3. **Two families with a deliberate shared trait** and clear difference.
 4. **Three or more.** Almost always a system that lost control.
 
+**Start from an anchor typeface.** Rutter's method, and the one to default to:
+pick one face first to set a uniting voice and act as the reference point for every
+later choice. "This could be a unique display face, a predetermined logotype or
+masthead font, or — preferably — the body type," because body text is the majority
+of the content and its choice is already an emotional decision matched to the tone
+of the text. Anchoring lets you study one face closely — geometry, contrast,
+proportions, particular glyphs — and use those specifics to find complements.
+
+Two shortcuts worth trying before a blind search: pair faces **by the same
+designer**, or **from the same foundry**. Shared hands and shared house style
+produce the "something shared" this skill requires, for free.
+
 **What to share, what to contrast.**
 
 | Share | Contrast |
@@ -62,8 +74,8 @@ payload, its licence, and its maintenance.
 
 - **Humanist serif + humanist sans** — shared calligraphic skeleton, contrasting
   serif treatment. Very safe.
-- **Geometric display + neutral text sans** — strong character in headings, quiet
-  body.
+- **Geometric display + unobtrusive text sans** — strong character in headings,
+  quiet body. ("Unobtrusive," not "neutral" — see `typeface-selection`.)
 - **High-contrast serif display + low-contrast sans text** — editorial classic.
 - **Same-family serif and sans (superfamily)** — unity by construction.
 
@@ -154,6 +166,11 @@ Rejected alternative: <pair> — <reason>
   typeface pairing as a practical heuristic layer.
 - Coles, *The Anatomy of Type* — reading shared and contrasting form from visible
   evidence; classification signals that make a pairing legible as intentional.
+- Rutter, *Web Typography* — combine typefaces for a reason; **start your
+  combination with an anchor typeface** (preferably the body face, since it carries
+  the majority of the content); find complements through contrast; combine typefaces
+  with similar structure and form; stick with a single family where you can; pair
+  typefaces from the same designer or the same foundry.
 - Lupton, *Thinking with Type* 3e — type families, hierarchy, and contrast.
 - Stocks, *Universal Principles of Typography* — width and weight as palette tools;
   a typographic scale is already a design system.

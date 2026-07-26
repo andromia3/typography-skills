@@ -156,7 +156,7 @@ Highest-return change: <one thing>
 **"Our landing page looks AI-generated. Should we change the font?"**
 
 > Intent is a confident, premium product page; it passes audit. The font isn't the
-> problem — it's a competent neutral sans and swapping it would cost a week and
+> problem — it's a competent, unobtrusive sans and swapping it would cost a week and
 > change nothing.
 >
 > Working: the scale is sensible and the measure is capped correctly.

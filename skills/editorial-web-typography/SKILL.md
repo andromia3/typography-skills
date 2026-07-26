@@ -5,8 +5,8 @@ description: Use when designing article, long-form, marketing, or art-directed p
 
 # Editorial web typography
 
-Where typography stops being neutral. Editorial pages carry voice, and voice is
-carried by the parts around the body text as much as by the body text itself.
+Where typography stops receding. Editorial pages carry voice, and voice is carried
+by the parts around the body text as much as by the body text itself.
 
 ## 1. When to invoke
 
@@ -71,6 +71,39 @@ heading level correct independently of size.
 - Skip when the paragraph starts with a quotation mark or a number.
 - Ensure the first word is still readable as a word by screen readers — a drop cap
   built by splitting the letter into its own element can be announced separately.
+
+**Paragraph demarcation, with numbers.** Rutter's concrete limits: indent by **at
+least 1em** if you indent, and separate by **no more than 1em** if you space. Below
+1em an indent doesn't read as intentional; above 1em the paragraphs stop cohering
+into a text block. And don't use stylised paragraph breaks (dinkuses, ornaments)
+without a reason — they interrupt.
+
+**A standfirst should stand first.** The intro paragraph that summarises the piece
+needs to be visibly distinct from body copy — larger, or a different weight — and it
+needs to come before the body, not float beside it. If it looks like the first
+paragraph, it isn't doing its job.
+
+**Block quotes are not pull quotes.** A block quote is *quoted source material* the
+reader should read in sequence. A pull quote is *repeated text* used to bait a
+scanner. They need different treatments, and styling every block quote as a giant
+centred pull quote is a common and confusing default.
+
+**Links, lists, and emphasis.**
+
+- **Make links clear but unobtrusive.** They must be identifiable without scanning
+  the page for colour, and identifiable by something other than colour alone.
+- **Don't underline for emphasis.** On the web an underline means "link." Use
+  italics for emphasis, weight for strong emphasis.
+- **Avoid faux bold and italic** — if the family lacks the style, don't synthesize it.
+- **Treat lists as text to be read**, not as data dumps: they need the same measure
+  discipline, leading, and spacing care as paragraphs.
+
+**Semantics come first, styling second.** Rutter: "establish the semantics up front."
+Decide what a piece of text *is* — `<em>`, `<strong>`, `<cite>`, `<q>`, `<abbr>`,
+`<figure>`/`<figcaption>`, `<blockquote>` — before deciding how it looks. Semantic
+markup drives assistive technology, translation, search, and reader modes; visual
+styling that floats free of it is decoration that only sighted users receive. A
+`<span class="bold">` communicates nothing to a screen reader.
 
 **Captions.** Small, clearly subordinate, consistently placed, and **still meeting
 contrast**. Grey captions are the most common contrast failure on editorial sites.
@@ -188,6 +221,13 @@ Tested: shortest <pass/fail> · longest <pass/fail> · missing-devices <pass/fai
   relationships, drop caps.
 - Santa Maria, *On Web Typography* — matching type to content and tone;
   understanding reading behavior; art direction.
+- Rutter, *Web Typography* — "establish the semantics up front"; mark the opening of
+  each passage; a standfirst should stand first; demarcate paragraphs appropriately
+  (indent at least 1em, separate by no more than 1em); don't use stylised paragraph
+  breaks without good reason; not all block quotes need to look like pull-quotes;
+  treat lists as text to be read; make links clear but unobtrusive; avoid underlines
+  for emphasis; avoid faux bolds and italics; implement drop caps accurately or not
+  at all.
 - Hochuli, *Detail in Typography* — paragraph texture, indentation, and the reading
   process that editorial devices must not disrupt.
 - Elam, *Typographic Systems of Design* — structural systems for composition; see

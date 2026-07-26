@@ -68,6 +68,15 @@ Elam's notes worth carrying:
 
 ## 5. Context-dependent heuristics
 
+- **Compound grids beat rigid modular grids on the web.** Rutter's fix for modular
+  grids fighting responsive design: combine a **columnar** grid with a
+  **hierarchical** one. Either give each column its own hierarchical grid, or —
+  more flexibly — start hierarchical and give each element of the hierarchy its own
+  columnar grid, choosing whatever suits that content. This lets a page hold a
+  12-column gallery and a 2-column article without forcing both onto one lattice.
+- **Prefer odd over even column counts.** Even grids invite lazy halving; odd counts
+  (5, 7, 9) force asymmetric decisions and produce more interesting, less default
+  compositions.
 - **Default for product UI is grid or modular.** Both survive reflow, repeat
   reliably, and are auditable.
 - **Card-based interfaces are modular systems.** Name it — it tells you the real
@@ -155,6 +164,10 @@ Alternatives rejected: <system> because <reason>
   transitional, modular, and bilateral systems; the dynamism of radial and
   dilatational; random's deceptive simplicity; bilateral as most symmetric and most
   challenging; modular units as ground; typographic lines defying standardization.
+- Rutter, *Web Typography* — design layouts from the content out; **use compound
+  grids for maximum flexibility** (columnar × hierarchical, in either order);
+  **choose odd over even grid systems**; use active white space; bring the design
+  into the margins; don't slavishly follow a baseline grid.
 - Lupton, *Thinking with Type* 3e — grids and alignment.
 - Lupton (ed.), *Type on Screen* — screen hierarchy, layering, dynamic vs. fixed
   compositions.

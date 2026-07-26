@@ -22,7 +22,7 @@ sources disagree, the higher-numbered rule loses.
 
 The books are print-era and pre-date current browser behavior. They are
 authoritative on **judgment** — what makes text readable, what makes a
-composition hold together, why a typeface reads as neutral or editorial. They
+composition hold together, why a typeface reads as unobtrusive or editorial. They
 are *not* authoritative on **implementation**: Rutter (2017) describes
 `font-display` as "a nascent CSS property under development," and both Rutter and
 Santa Maria recommend Web Font Loader. Both statements were true when written and
