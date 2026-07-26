@@ -196,5 +196,5 @@ part goes stale fastest.
 
 ## Licence
 
-[MIT](LICENSE) for the skill files. The source books are the property of their
+[MIT](LICENSE) for the skill files. See [NOTICE.md](NOTICE.md) on sources and citation.
 authors and publishers.
