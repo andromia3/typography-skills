@@ -197,4 +197,3 @@ part goes stale fastest.
 ## Licence
 
 [MIT](LICENSE) for the skill files. See [NOTICE.md](NOTICE.md) on sources and citation.
-authors and publishers.
