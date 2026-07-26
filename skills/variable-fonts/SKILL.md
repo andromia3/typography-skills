@@ -74,6 +74,32 @@ size separately. Enable with `font-optical-sizing: auto` (browsers apply it from
 **Weight is now continuous.** You can use 450 or 530. Resist it in a design system —
 the value of a scale is exclusion. Pick your named steps and tokenize them.
 
+**Grade (`GRAD`) — the axis most people don't know they need.** Grade changes
+apparent weight **without changing advance widths**, so text gets visually heavier
+or lighter while occupying exactly the same space. Nothing reflows.
+
+Two uses:
+
+- **Dark mode.** Light-on-dark text appears optically bloated — the light strokes
+  bleed into the dark ground. Drop the grade slightly in dark mode and the text
+  reads at the same visual weight as its light-mode counterpart. (In print the
+  relationship inverts.) This is the correct fix for "our dark mode looks heavier",
+  far better than switching to a lighter *weight*, which would reflow the line.
+- **Interaction states.** Because nothing reflows, grade is safe for hover and
+  active states in a way `font-weight` is not.
+
+`GRAD` is a custom axis (Roboto Flex exposes it), so it is one of the legitimate
+cases for `font-variation-settings` — there is no standard property for it.
+
+**Parametric axes** go further still, exposing thin-stroke, thick-stroke, counter
+width, and similar low-level parameters. Powerful for fine-tuning a face to a
+specific context; easy to produce something the type designer would not recognise.
+Use sparingly and compare against the designed instances.
+
+**Multiplexed fonts** solve the same reflow problem a different way: every weight
+occupies identical horizontal space by design, so switching weight never changes
+width. See `ui-component-typography`.
+
 **Animation.** Axes are animatable, which enables genuinely new effects. Constrain
 it: animating `wght` reflows text if the width changes, and any motion must respect
 `prefers-reduced-motion`.
@@ -99,6 +125,9 @@ still has to load. The metric-matched-fallback technique in
 | Text reflows during a weight animation | Weight change alters advance widths | Animate a non-reflowing property, or reserve space |
 | Display text looks flabby at 72px | `opsz` unused or disabled | `font-optical-sizing: auto` |
 | Design drifts to arbitrary weights | Continuous axis, no tokens | Tokenize named steps |
+| Dark mode text looks heavier than light mode | Optical bloat of light-on-dark | Lower `GRAD`, not `wght` — no reflow |
+| Hover state shifts the layout | `font-weight` changes advance widths | `GRAD`, or a multiplexed face |
+| Parametric tuning produced something odd | Low-level axes pushed past the design space | Compare against the designed instances |
 | Motion sickness complaints | Axis animation, no reduced-motion guard | Wrap in the media query |
 
 ## 6. Evaluation procedure
@@ -173,8 +202,13 @@ Reduced-motion respected: <yes/n-a>
   [`font-optical-sizing`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-optical-sizing).
   [web.dev — optimize web fonts](https://web.dev/learn/performance/optimize-web-fonts).
 - Stocks, *Universal Principles of Typography* (2024) — the most current book in the
-  corpus on variable fonts; width axis as a palette tool, and using a width axis to
-  fit more characters per line in narrow columns or headings.
+  corpus on variable fonts. §29 multiple widths; §30 masters and interpolation
+  (weight and width masters combined by vector addition); §31 multiplexed typefaces;
+  §84–85 variable fonts and axes; **§86 grade** — "grade, unlike weight (except in
+  multiplexed fonts), doesn't affect the overall width of the glyphs", and "on
+  screens, light-on-dark text will appear slightly bloated, so, if possible, switch
+  to a lighter grade when designing for Dark Mode. The opposite is true in print";
+  §87 parametric axes; §88 the inheritance problem; §27 avoid faux styles.
 - Brown, *Flexible Typesetting* — designing typographic systems that adapt rather
   than fixed instances; the conceptual case for continuous ranges.
 - Rutter, *Web Typography* — OpenType foundations that variable fonts extend.

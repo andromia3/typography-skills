@@ -108,6 +108,17 @@ Each skill carries the same ten sections: when to invoke, required context,
 invariant principles, context-dependent heuristics, failure patterns, evaluation
 procedure, output format, examples, counterexamples, source citations.
 
+### Reference tables
+
+Lookup material, loadable without a skill:
+
+| File | Contents |
+|---|---|
+| [`opentype-features.md`](references/opentype-features.md) | Every OpenType tag → CSS property, with the inheritance trap |
+| [`universal-principles-index.md`](references/universal-principles-index.md) | All 100 of Stocks' principles, each routed to the owning skill |
+| [`source-hierarchy.md`](references/source-hierarchy.md) | The conflict-resolution order and why it exists |
+| [`corpus-conflicts.md`](references/corpus-conflicts.md) | Where the ten books genuinely disagree, and how to resolve it |
+
 ---
 
 ## The source hierarchy

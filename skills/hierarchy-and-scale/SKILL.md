@@ -72,6 +72,20 @@ feature: it's denser where you need choices and coarser where you don't.
 **Don't ship raw ratio output.** A 1.25 scale from 16 gives 31.25, 39.0625… Round
 to whole or half pixels and keep the rounded value as the token.
 
+**Baseline grid.** A horizontal rhythm every *n* pixels that every text element
+aligns to, so unrelated columns share a common baseline. Stocks' concrete version:
+a 24px baseline grid — "literally, a line every 24 vertical pixels" — suits body
+type with a 24px line-height. Smaller text at 12px line-height can use a 12px
+sub-grid, with body type aligning every two lines.
+
+Worth it for editorial, print, and multi-column layouts where cross-column
+alignment is visible. Usually **not** worth it for dense product UI, where forcing
+every component onto a baseline fights the component's own padding and produces
+worse spacing than a simple 4/8px spacing scale. Decide deliberately rather than
+adopting one by default — and note that a baseline grid constrains your line-height
+choices, which `body-text-and-reading` may have already fixed for readability. If
+they conflict, readability wins (rule 2 over convention).
+
 **Weight and space do the work size can't.** Once you have 3–4 sizes, express
 further distinction with weight (400/600/700), space above (a heading belongs to
 what follows it, so space above > space below), and case.

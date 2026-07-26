@@ -26,7 +26,8 @@ Do not name a font before you have these:
 - **Smallest and largest** sizes it must work at.
 - **Scripts and languages** required, now and planned.
 - **Weights and styles** genuinely needed (including true italics).
-- **Figure requirements** — tabular for data, oldstyle for prose.
+- **Figure requirements** — tabular for data, oldstyle for prose. Confirm the file
+  actually ships them (`references/opentype-features.md`).
 - **Licence and budget** — web, app, desktop, redistribution.
 - **Performance budget** — see `font-loading-and-performance`.
 - **Brand tone**, and any existing system constraint.
@@ -107,7 +108,7 @@ render differently per platform.
    script coverage, licence, required styles, tabular figures.
 2. For survivors, render **real content** — the actual longest string, the actual
    smallest label — at the real sizes in the real medium.
-3. Apply `typeface-anatomy` §7 to each: x-height, contrast, aperture, counters,
+3. Apply `typeface-anatomy` §8 (evaluation procedure) to each: x-height, contrast, aperture, counters,
    `1 l I`, `0 O`.
 4. Set a full paragraph in each and read it. Do any glyphs distract?
 5. Test the worst case: longest locale word, densest table, smallest size, lowest

@@ -70,8 +70,27 @@ to body-text logic. WCAG 1.4.12 still requires the layout to survive a 1.5 overr
 .prose         { font-variant-numeric: oldstyle-nums proportional-nums; }
 ```
 
+Full tag/property lookup in `references/opentype-features.md`.
+
 Lining figures are usually cap height or slightly less and are normally set on a
 constant (en) body, which is what makes them tabular-capable (Hochuli).
+
+**Multiplexed typefaces solve the hover-reflow problem.** In most families a heavier
+weight is also wider, so bolding a nav item or a tab on hover shifts everything
+after it. A **multiplexed** face is designed so every weight occupies exactly the
+same horizontal space — "a word set in a light weight will take up the exact same
+horizontal space as a word set in a heavy weight" (Stocks §31). Nothing moves.
+
+Where a multiplexed face isn't available, the alternatives in order:
+
+1. A variable font's **`GRAD` (grade)** axis — changes apparent weight without
+   changing width. See `variable-fonts`.
+2. Reserve the bold width up front (render the bold string invisibly to size the
+   container, or set `min-width`).
+3. Signal the state with something other than weight — colour, an underline, a
+   background.
+
+Never let a hover state reflow a navigation bar.
 
 **Labels and truncation.** Design for the longest string first. Options, in order of
 preference: allow wrapping; allow the container to grow; shorten the copy; truncate

@@ -66,6 +66,28 @@ microtypographic finish.
 
 ## 5. Context-dependent heuristics
 
+**Nix's hierarchy of typographic needs.** Charles Nix (Monotype) maps Maslow onto
+typography, and it's a fast way to locate what a piece of work actually needs before
+you critique what it aspires to:
+
+1. **Font functionality** — the typeface doesn't matter yet; there just has to be
+   something rendering the message.
+2. **Font security** — the licence is clean; no legal or financial exposure.
+3. **Typographic love and belonging** — someone actually cares about the type.
+4. **Typographic esteem** — the choices generate esteem; the work reads as considered.
+5. **Typographic self-actualization** — expressive, distinctive, fully realised.
+
+Critique at the wrong level wastes everyone's time. Telling a team their type lacks
+expressive voice when their webfont licence doesn't cover the app, or when the text
+fails contrast, is critique aimed three levels above the actual problem. Find the
+lowest unmet level and start there.
+
+**Typographic colour is the fastest diagnostic you have.** Squint at a block of text:
+its overall grey density should be even. Blotchy or patchy colour means rivers,
+uneven word spacing, or a weight mismatch — and it's usually what people are
+reacting to when they say a page looks "cheap" without being able to say why. See
+`microtypography`.
+
 **Judge at reading distance and at a glance.** Squint first: does structure emerge?
 Then read: does the detail hold up? Work that fails the squint test has a hierarchy
 problem; work that passes the squint and fails the read has a micro problem.
@@ -185,5 +207,9 @@ Highest-return change: <one thing>
   visual hierarchy; structure as the basis of judgment.
 - Latin, *Better Web Typography* — explaining typography decisions to clients and
   developers.
-- Stocks, *Universal Principles of Typography* — "it's okay to just love type for no
-  discernible reason," and the limits of that in professional critique.
+- Stocks, *Universal Principles of Typography* — §15 "it's okay to just love type for
+  no discernible reason," and the limits of that in professional critique; §53
+  typographic colour as a squint test for density; §98 **Nix's hierarchy of
+  typographic needs** (Charles Nix, Monotype) — font functionality → font security →
+  typographic love and belonging → typographic esteem → self-actualization; §99 "it
+  depends." Full index in `references/universal-principles-index.md`.

@@ -48,6 +48,8 @@ enhance the legibility of texts."*
 - **Punctuation has correct forms.** `'` and `"` are typewriter marks, not quotes.
   Hyphen, en dash, and em dash are three different characters with three
   different jobs.
+- **Turn standard ligatures off wherever you letterspace** — a tracked `fi`
+  ligature reads as broken. See `references/opentype-features.md`.
 - **Capitals and small caps always need letterspacing.** Set solid, they read as a
   cramped block. Lowercase set for text does not.
 
@@ -67,6 +69,18 @@ WCAG 1.4.12 requires paragraph spacing to survive a `2em` user override. So:
 
 Source hierarchy: rule 1 and rule 2 outrank rule 6 here.
 
+**Kerning is not tracking, and people almost always mean tracking.** Stocks:
+"Everyone likes to point out bad kerning… most of the time they mean tracking."
+
+- **Kerning** — the space between *two specific glyphs* (the `AV` pair, `To`).
+  Handled by the font's kern table; you adjust it only for display-size type where
+  one pair is visibly wrong. Never kern body text by hand.
+- **Tracking** — the overall letter spacing across *a block* of text. This is the
+  control you actually reach for. In CSS it's `letter-spacing`.
+
+If someone reports "bad kerning" in running text, they are describing tracking, a
+poorly-spaced font, or a rag problem. Diagnose before adjusting.
+
 **Tracking.**
 
 | Case | Guidance |
@@ -76,6 +90,32 @@ Source hierarchy: rule 1 and rule 2 outrank rule 6 here.
 | All-caps and small caps | Add positive tracking, always |
 | Small sizes / low contrast / dark-on-light inversion | Slightly positive |
 | Any text a user can override | Must survive `letter-spacing: .12em` (WCAG 1.4.12) |
+
+Two hard rules on tracking:
+
+- **Never set letter spacing in absolute units.** Tracking, like line-height, must
+  be relative to the type itself (`em`) so it scales with the size. `letter-spacing:
+  1px` is wrong at every size except the one it was tuned for.
+- **Negative tracking works only at large sizes**, and then only slightly. Below
+  display size it degrades legibility, and it collides with the 1.4.12 override.
+
+**Typographic colour.** The density of a block of text — its overall grey value,
+nothing to do with hue. Stocks: it "refers to the text density on a page… consider
+it a squint test." Crucially, colour is set not just by line-height and tracking but
+by "all those in-between spaces, too, like counters, serifs, and the very shapes of
+the letters."
+
+This is the diagnostic behind most "something feels off" reports. Squint at the
+block: if some areas go darker or lighter than others, you have uneven colour —
+caused by rivers, inconsistent word spacing, a weight that's too light for the size,
+or a heading whose stroke thickness doesn't match the body's apparent weight. Even
+colour is what makes a page look professionally set.
+
+**Alternative spaces.** A regular word space around an em or en dash is often too
+open. Hair spaces and thin spaces exist for this, and for separating a dash from
+adjacent characters without opening a hole. House style decides between a closed-up
+em dash, a spaced en dash, and a hair-spaced em dash — but pick one and apply it
+consistently, because mixing them is visible.
 
 **Hyphenation and rag.** Hyphenation lets justified text hold even word spacing;
 without it, narrow justified columns are unsalvageable. For ragged setting, judge
@@ -88,6 +128,33 @@ single line stranded at the top or bottom of a column. In CSS, `orphans`/`widows
 handle column breaks; `text-wrap: pretty` addresses the last-line orphan and
 `text-wrap: balance` evens short blocks like headings. Both are progressive
 enhancements — unsupported browsers fall back to normal wrapping with no breakage.
+
+**Hanging punctuation (optical margin alignment).** A quotation mark or hyphen at
+the start of a line optically breaks the column's left edge. Lupton: hanging
+punctuation "prevents quotation marks from taking a bite out of the crisp left edge
+of a text block" — you "create a sharp edge by pushing the quotation marks into the
+margin."
+
+CSS `hanging-punctuation: first last;` does this natively but is Safari-only at time
+of writing, so treat it as progressive enhancement. For a pull quote or blockquote
+where the effect matters, a negative `text-indent` on the first line is the reliable
+fallback. Don't hand-hang punctuation in body copy — it won't survive reflow.
+
+**Controlling breaks without polluting content.**
+
+| Need | Use |
+|---|---|
+| Keep two words together ("12 kg", "Mr Smith") | `&nbsp;` — non-breaking space |
+| Offer a break point inside a long word | `&shy;` — soft/discretionary hyphen; shows only if the break is used |
+| Offer a break with no hyphen (long URLs) | `<wbr>` |
+| Prevent a break in a phrase | `white-space: nowrap` on a span |
+
+Rutter distinguishes the ordinary hyphen (always displayed — `fly-by-wire`, or
+disambiguating `twenty-four hour shifts`) from the soft hyphen, which appears only
+when the line actually breaks there. And his blunt rule on the pairing: **"to
+justify text without hyphenating is to wilfully harm the reading experience."**
+Prefer automatic `hyphens: auto` with a correct `lang` attribute; reach for `&shy;`
+only for words the dictionary gets wrong.
 
 **Punctuation quick table.**
 
@@ -113,11 +180,17 @@ enhancements — unsupported browsers fall back to normal wrapping with no break
 | Heading tightened globally and body went tight too | Tracking applied to a shared token | Scope tracking to display sizes |
 | A single word on a heading's second line | No `text-wrap: balance` | Add it (progressive enhancement) |
 | Small caps look like shrunken capitals | Faux small caps | Use a font with real `smcp` |
+| "The kerning is bad" in a paragraph | Tracking, font spacing, or rag — not kerning | Diagnose before adjusting; kerning is per-pair |
+| Tracking correct at one size, wrong at others | `letter-spacing` in px | Use `em` |
+| Block looks patchy/mottled when squinted | Uneven typographic colour | Find the cause: rivers, word spacing, weight mismatch |
+| Heading looks weaker than the body it sits above | Stroke thickness lighter than body's apparent weight | Match apparent weight, not nominal |
+| Dashes sit in visible holes | Full word spaces around an em dash | Hair/thin space, or close it up — consistently |
 
 ## 6. Evaluation procedure
 
-1. **Render at real size.** Then step back or squint — rivers and rag problems
-   appear as texture before they appear as detail.
+1. **Render at real size, then squint.** This is the typographic-colour test and it
+   comes first: rivers, uneven word spacing, and weight mismatches appear as
+   blotchy texture before they resolve into detail. An evenly grey block passes.
 2. Scan word spacing down the block. Even? Any vertical channels?
 3. If justified: count CPL. Under ~50 → change to ragged or widen.
 4. If ragged: is the edge accidental, or does it form a shape or stair-step?
@@ -183,8 +256,14 @@ Unverified: <what was not checked in a rendered context>
   Tschichold on indents as the only certain paragraph indicator; fixation
   behavior around capitals and long words.
 - Lupton, *Thinking with Type* 3e — typographic conventions, punctuation forms.
-- Stocks, *Universal Principles of Typography* — OpenType features, small caps,
-  figure styles.
+- Stocks, *Universal Principles of Typography* — §22 "a little tracking goes a long
+  way"; §53 "typographic color is about density" — the squint test, and colour being
+  dictated by counters, serifs, and letterform shapes as well as spacing; §56–57
+  dashes and alternative spaces; §58 italicize punctuation and spaces too; §60
+  widows and orphans; §61 optical trickery; §76 "kern only if you have to" — the
+  kerning/tracking confusion, kerning being the space between two specific glyphs;
+  and the rule that letter spacing must never use absolute units. Full index in
+  `references/universal-principles-index.md`.
 - Rutter, *Web Typography* — hyphenation and justification on the web.
 - WCAG 2.2 §1.4.12 (text spacing override).
 - MDN — [`text-wrap`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap):

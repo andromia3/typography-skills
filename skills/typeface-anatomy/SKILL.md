@@ -100,23 +100,51 @@ faces (`typeface-pairing`). This skill supplies the evidence those use.
 Coles' classifications are descriptions of form, which is what makes them useful —
 each implies what you'll see.
 
+**Classes are compound, not exclusive.** Across the 100 faces Coles analyses, the
+classification field is frequently a compound — `Display/Humanist Sans`,
+`Humanist Slab/Serif`, `Display/Neo-Grotesque/Geometric Sans`. A face can be
+geometric in construction and display in intent. Don't force one bucket.
+
+**Serifs**
+
 | Class | Visible signals |
 |---|---|
-| Humanist Serif | Angled axis, moderate contrast, calligraphic trace |
-| Transitional / Rational Serif | More vertical axis, higher contrast, regular proportions |
-| Didone | Extreme contrast, vertical axis, hairline unbracketed serifs |
-| Contemporary Serif | Large x-height, low contrast, large chunky serifs, very open apertures |
-| Inscribed / Engraved | Chiselled origin, low contrast, wedge or flared serifs |
+| Venetian Humanist Serif | Strongly angled axis, low contrast, sloped `e` bar; earliest roman forms |
+| French Humanist Serif | Angled axis, more refined than Venetian, moderate contrast |
+| Dutch Humanist Serif | Sturdier, larger x-height, higher contrast than French |
+| Transitional Serif (incl. English) | More vertical axis, higher contrast, regular proportions |
+| Rational Serif | Vertical axis, high contrast, flatter serifs |
+| Didone Serif | Extreme contrast, vertical axis, hairline unbracketed serifs |
+| Contemporary Serif | Large x-height, low contrast, chunky serifs, very open apertures |
+| Inscribed / Engraved / Glyphic | Chiselled origin, low contrast, wedge or flared serifs |
+
+**Sans**
+
+| Class | Visible signals |
+|---|---|
 | Grotesque Sans | Structure like Transitional/Rational serifs, low contrast, oval rounds |
 | Neo-Grotesque Sans | Closed apertures, very regular, neutral |
+| Gothic Sans | American grotesque lineage; sturdy, relatively closed workhorse forms |
 | Humanist Sans | Calligraphic structure, often higher contrast than other sans, open apertures |
 | Neo-Humanist Sans | Larger x-height, very open apertures, less contrast |
 | Geometric Sans | Circular rounds, near-uniform stroke, single-storey `a` common |
-| Grotesque / Geometric / Humanist Slab | Slab serifs on the corresponding sans structure |
-| Script | Connected or calligraphic; never for extended text |
+| Inscriptional Sans | Sans with chiselled proportions and flared stems |
+| Monospaced Sans | Fixed advance width; disambiguated digits expected |
 
-Stocks' caution: classification "can be useful — and useless, too." It's a lens,
-not a taxonomy to defend.
+**Slabs, scripts, and the rest**
+
+| Class | Visible signals |
+|---|---|
+| Grotesque / Geometric / Humanist Slab | Slab serifs on the corresponding sans structure |
+| Formal Script | Connected, calligraphic, high contrast — never for extended text |
+| Casual Script | Brush or hand lettering, looser, informal |
+| Blackletter / Textura | Dense angular vertical strokes; very low legibility for modern readers |
+| Display | Not a construction but an **intent** — drawn for large sizes; usually compounds with a structural class |
+
+Two cautions. Stocks: classification "can be useful — and useless, too" — a lens, not
+a taxonomy to defend. And the humanist serif subtypes are **regional and historical**
+(Venetian, French, Dutch, English); if you can't see the distinction in the specimen,
+don't claim it.
 
 ## 7. Failure patterns
 

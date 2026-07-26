@@ -101,6 +101,15 @@ application, and never lets a trend override an accessibility floor.
 | "check this", systematic review against criteria, pass/fail | `typography-audit` |
 | "is this good", taste, expressive judgment, art direction | `typography-critique` |
 
+### Reference tables (load directly, no skill needed)
+
+| Question | File |
+|---|---|
+| "which OpenType tag / CSS property does X?" | `references/opentype-features.md` |
+| "is there a principle covering X?" | `references/universal-principles-index.md` (all 100, routed) |
+| "the books disagree — which wins?" | `references/source-hierarchy.md` |
+| "what do the books actually disagree about?" | `references/corpus-conflicts.md` |
+
 ### Always co-load
 
 - Anything rendering **body text** → also `typography-accessibility`.
