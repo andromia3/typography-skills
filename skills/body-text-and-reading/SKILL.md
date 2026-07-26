@@ -81,6 +81,14 @@ the return sweep to land correctly. Push lower as measure shortens. Tighter than
 1.3 for a full paragraph is almost always wrong. Always use a **unitless** value so
 it inherits proportionally.
 
+**Don't ship the default leading.** Elam's observation about how designers actually
+work: "initially, many designers are satisfied with the computer default values for
+leading, about 20% of the text size" — i.e. roughly 1.2 — and the discipline is to
+"become sensitive to the texture of the text on the page," then investigate leading
+deliberately and "experiment with dense and airy text." A 1.2 line-height in a
+paragraph is usually a default nobody chose. See `microtypography` on typographic
+colour for reading that texture.
+
 **Reading distance** scales everything. Kiosk and TV need far larger sizes than
 their "equivalent" desktop values.
 
@@ -167,6 +175,9 @@ Unverified: <anything not checked in a rendered context>
 - Latin, *Better Web Typography* — 1.3–1.7 line-height; the size/line-height/
   measure triangle.
 - Lupton (ed.), *Type on Screen* — 45–75 measure on screen.
+- Elam, *Typographic Systems of Design* — default leading of about 20% of text size
+  as a starting point designers too readily accept; developing sensitivity to the
+  texture of the text; experimenting with dense and airy settings.
 - Stocks, *Universal Principles of Typography* — Bringhurst's 66; Material's
   40–60; Walton's asterisk trick.
 - WCAG 2.2 §1.4.3, §1.4.4, §1.4.12.

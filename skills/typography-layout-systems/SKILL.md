@@ -68,6 +68,38 @@ Elam's notes worth carrying:
 
 ## 5. Context-dependent heuristics
 
+- **Nonobjective elements are compositional tools, not decoration.** Elam's term for
+  the non-typographic marks in a layout — rules, bars, blocks, dots, circles. "Using
+  nonobjective elements sharpens and articulates the composition… they enhance the
+  functions of emphasis, organization, and balance," becoming "functional guides
+  when used with typography," clarifying hierarchical order and directing the eye.
+  If a rule in your layout isn't doing one of those four jobs, delete it.
+- **The circle is a wildcard.** Elam: it "can be used anywhere in the composition,"
+  giving you a tool to "guide the eye; create a pivot point, tension, and emphasis;
+  or contribute to visual organization or balance." Placement changes its function
+  entirely:
+
+  | Placement | Effect |
+  |---|---|
+  | Squeezed between lines of text | **Tension** |
+  | In close proximity to a word or line | **Emphasis** |
+  | Aligned with lines | **Organization** |
+  | Isolated in open space | **Stopping point** — where the eye enters |
+  | Counterweighting a heavy group | **Balance** |
+  | At an axis intersection | **Pivot point** |
+
+  Generalise this: any nonobjective element's meaning comes from *placement relative
+  to the type*, not from the element itself.
+- **Try "one size, one weight" as a diagnostic.** Elam's teaching constraint —
+  compose using a single size and single weight, so hierarchy must come from
+  position, grouping, and space rather than from typographic contrast. If a layout
+  only works once you add size and weight variation, its underlying structure is
+  weak. Fix the structure, then add the contrast back.
+- **Group by breaking lines deliberately.** Elam: when the format is small and line
+  lengths are long, breaking lines "intuitively in a logical pattern" groups lines
+  of text that belong together — which "simplifies the composition and enhances
+  readability." Line breaks are a compositional decision in display settings, not
+  only a consequence of measure.
 - **Compound grids beat rigid modular grids on the web.** Rutter's fix for modular
   grids fighting responsive design: combine a **columnar** grid with a
   **hierarchical** one. Either give each column its own hierarchical grid, or —
@@ -169,5 +201,13 @@ Alternatives rejected: <system> because <reason>
   **choose odd over even grid systems**; use active white space; bring the design
   into the margins; don't slavishly follow a baseline grid.
 - Lupton, *Thinking with Type* 3e — grids and alignment.
+- Elam, *Typographic Systems of Design* — also: **nonobjective elements** sharpening
+  and articulating a composition, enhancing "emphasis, organization, and balance" and
+  acting as "functional guides"; **the circle as a wildcard element** creating a pivot
+  point, tension, emphasis, organization, or balance depending on placement; the
+  one-size/one-weight constraint studies; grouping by breaking lines "intuitively in a
+  logical pattern" to simplify composition and enhance readability; and the caution
+  that designers too often accept default leading (~20% of text size) instead of
+  developing sensitivity to the texture of the text.
 - Lupton (ed.), *Type on Screen* — screen hierarchy, layering, dynamic vs. fixed
   compositions.

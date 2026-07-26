@@ -100,6 +100,22 @@ faces (`typeface-pairing`). This skill supplies the evidence those use.
 Coles' classifications are descriptions of form, which is what makes them useful —
 each implies what you'll see.
 
+⚠️ **Coles opens with a warning, and it should travel with the tables.** "There is no
+universal classification system. Just like any attempt to apply a set of genres to
+creative work, be it music, literature, or art, typeface classification is inherently
+problematic. After all, type is not biology — a typeface doesn't have a genetic code."
+Letterforms have "too many subtle variations and too few constants," and a new style
+will always arrive that fits none of your bins.
+
+He also names why the common workaround fails: most systems "avoid this problem by
+associating classifications with historical periods," which categorises historical
+faces well but "become[s] impractical when it comes to contemporary design — what
+comes after postmodern? Post-postmodern?"
+
+So use these tables to **describe what you can see and defend a choice from
+evidence**. Don't use them to argue a face into a bin, and don't expect a foundry to
+group faces the way you do (see `typeface-selection` on genre vs. classification).
+
 **Classes are compound, not exclusive.** Across the 100 faces Coles analyses, the
 classification field is frequently a compound — `Display/Humanist Sans`,
 `Humanist Slab/Serif`, `Display/Neo-Grotesque/Geometric Sans`. A face can be
@@ -213,7 +229,11 @@ size?"**
 
 ## 12. Source citations
 
-- Coles, *The Anatomy of Type* — **primary source.** Classification by visible
+- Coles, *The Anatomy of Type* — **primary source.** The warning that "there is no
+  universal classification system… type is not biology — a typeface doesn't have a
+  genetic code," that letterforms have "too many subtle variations and too few
+  constants," and that period-based classification "become[s] impractical when it
+  comes to contemporary design." Classification by visible
   form: stroke contrast, aperture, terminal, serif shape and x-height across
   Humanist/Transitional/Rational/Contemporary serif, Inscribed, Grotesque,
   Neo-Grotesque, Humanist, Neo-Humanist sans, and slab variants; comparing similar

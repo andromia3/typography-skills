@@ -78,6 +78,18 @@ descriptive terms designers actually use — you will not find a "linear dynamic
 serif" category on a foundry site. He compares it to pigeonholing musicians into
 genres: difficult and contentious.
 
+**Coles agrees, which makes this consensus rather than conflict.** The author of the
+pack's own classification tables opens with the same warning: "there is no universal
+classification system. Just like any attempt to apply a set of genres to creative
+work, be it music, literature, or art, typeface classification is inherently
+problematic. After all, type is not biology — a typeface doesn't have a genetic
+code." Letterforms have "too many subtle variations and too few constants."
+
+He also names why the usual workaround fails: most systems "avoid this problem by
+associating classifications with historical periods," which handles historical faces
+but "become[s] impractical when it comes to contemporary design — what comes after
+postmodern? Post-postmodern?"
+
 Coles' classification-by-visible-form is still the right tool for *describing what
 you see* and defending a choice from evidence. It is a poor tool for *finding* a
 face. Use classification to analyse, genre and description to search.
