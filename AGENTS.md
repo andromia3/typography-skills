@@ -4,7 +4,7 @@ Entry point for Codex and any agent that reads `AGENTS.md`.
 
 ## What this repo is
 
-Twenty typography skills in `skills/`, each a self-contained `SKILL.md`. Plain
+Twenty-one typography skills in `skills/`, each a self-contained `SKILL.md`. Plain
 Markdown with YAML frontmatter — no runtime, no dependencies.
 
 ## How to use it
@@ -12,7 +12,7 @@ Markdown with YAML frontmatter — no runtime, no dependencies.
 When a task involves typography — setting, choosing, scaling, spacing, loading,
 tokenizing, auditing, or critiquing type — **read `skills/type/SKILL.md` first.**
 It carries the routing table and the conflict hierarchy. Then read the 2–4 skills it
-points to. Do not read all twenty.
+points to. Do not read all twenty-one.
 
 If invoked as `$type` or `/type`, do exactly that.
 
@@ -70,6 +70,7 @@ before emitting code. Known-stale corpus claims are flagged inline in the skills
 | kerning, rag, orphans, punctuation | `microtypography` |
 | variable fonts, axes | `variable-fonts` |
 | animated/kinetic type, transitions, streaming text | `motion-typography` |
+| colour/layer fonts, icon fonts, emoji | `color-and-icon-fonts` |
 | webfont perf, FOUT/FOIT, CLS | `font-loading-and-performance` |
 | contrast, zoom, WCAG | `typography-accessibility` |
 | Arabic, CJK, Indic, bidi, RTL | `international-typography` |

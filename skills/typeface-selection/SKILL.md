@@ -102,11 +102,12 @@ and metric-matching at once. Strong default when a project needs both.
 
 **Variable fonts** collapse many weights into one file. See `variable-fonts`.
 
-**How the face renders on screen is part of the choice.** Rutter devotes a chapter
-to it, and the practical residue: accept the limits of screen resolution, accept
-that platforms render differently, and **check your type across platforms** rather
+**How the face renders on screen is part of the choice.** Rasterisation is lossy and
+varies by engine, only Windows uses hinting, and handhelds use greyscale smoothing
+rather than subpixel anti-aliasing — so **check your type across platforms** rather
 than judging on your own machine. Delicate high-contrast faces and hairline weights
-are the first casualties on low-DPI displays.
+are the first casualties on low-DPI displays. Full detail in `typeface-anatomy`
+("How letterforms become pixels").
 
 ⚠️ One piece of the 2017 advice is stale. Rutter recommends disabling subpixel
 anti-aliasing (`-webkit-font-smoothing: antialiased`) *only* for reversed-out text,
@@ -140,7 +141,7 @@ render differently per platform.
    script coverage, licence, required styles, tabular figures.
 2. For survivors, render **real content** — the actual longest string, the actual
    smallest label — at the real sizes in the real medium.
-3. Apply `typeface-anatomy` §8 (evaluation procedure) to each: x-height, contrast, aperture, counters,
+3. Apply the `typeface-anatomy` evaluation procedure to each: x-height, contrast, aperture, counters,
    `1 l I`, `0 O`.
 4. Set a full paragraph in each and read it. Do any glyphs distract?
 5. Test the worst case: longest locale word, densest table, smallest size, lowest

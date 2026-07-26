@@ -2,7 +2,7 @@
 
 **A typography knowledge pack for AI coding agents — Claude Code, Codex, Gemini CLI, Copilot CLI, Cursor, or anything that reads Markdown skills.**
 
-Twenty focused skills extracted from ten canonical typography books, plus a
+Twenty-one focused skills extracted from ten canonical typography books, plus a
 `/type` router that loads only the ones a task needs.
 
 Built because agents are confidently wrong about type. They emit `font-size: 16px`
@@ -74,7 +74,7 @@ ln -s "$PWD/skills/"* ~/.claude/skills/
 /type build a type scale for a dense dashboard
 ```
 
-The router loads **2–4 skills maximum** per pass. It won't dump twenty files into
+The router loads **2–4 skills maximum** per pass. It won't dump twenty-one files into
 your context.
 
 ---
@@ -97,6 +97,7 @@ your context.
 | `microtypography` | Rivers, rag, orphans, tracking, punctuation, hyphenation |
 | `variable-fonts` | Axes, `font-variation-settings` vs standard properties, optical sizing |
 | `motion-typography` | Kinetic type, transitions, reduced-motion, streaming text |
+| `color-and-icon-fonts` | Colour/layer fonts, COLRv1, `font-palette`, icon fonts vs SVG, emoji |
 | `font-loading-and-performance` | `font-display`, subsetting, metric-matched fallbacks, CLS |
 | `typography-accessibility` | WCAG 1.4.3 / 1.4.4 / 1.4.5 / 1.4.12 |
 | `international-typography` | Arabic, CJK, Indic, bidi, logical properties |

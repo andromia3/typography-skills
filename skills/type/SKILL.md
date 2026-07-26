@@ -32,9 +32,11 @@ Never emit a bare universal constant. Encode the decision and its inputs.
   typographic.
 - You are about to answer a typography question from memory.
 
-**Do not** invoke for colour, iconography, or non-typographic layout — those belong
-to the general design skills. Motion is split: *type* that moves is
-`motion-typography`; general interface motion is not this pack's. If the request is
+**Do not** invoke for non-typographic layout — that belongs to the general design
+skills. Two topics are split rather than excluded: *type* that moves is
+`motion-typography` (general interface motion is not this pack's), and *type* that
+carries colour or is made of glyphs is `color-and-icon-fonts` (general colour systems
+and iconography are not). If the request is
 really about information architecture or copy *content* rather than its setting, say
 so and route elsewhere.
 
@@ -94,6 +96,7 @@ application, and never lets a trend override an accessibility floor.
 | kerning, tracking, word spacing, hyphenation, punctuation, orphans/widows | `microtypography` |
 | variable fonts, weight/width/optical-size axes, `font-variation-settings` | `variable-fonts` |
 | animated or kinetic type, text transitions, scroll effects, streaming text | `motion-typography` |
+| colour fonts, layer fonts, `font-palette`, icon fonts vs SVG, emoji | `color-and-icon-fonts` |
 | webfont performance, FOUT/FOIT, CLS, subsetting, `font-display` | `font-loading-and-performance` |
 | contrast, zoom, Dynamic Type, dyslexia, screen readers, WCAG | `typography-accessibility` |
 | Arabic, Hebrew, CJK, Indic, bidi, vertical text, localization | `international-typography` |
@@ -132,7 +135,7 @@ application, and never lets a trend override an accessibility floor.
 | Pattern | Cause | Fix |
 |---|---|---|
 | Answered from memory; emitted a constant | Router skipped | Load the skill; encode the procedure |
-| Loaded all twenty skills | Routing by topic, not by change | 2–4 max |
+| Loaded all twenty-one skills | Routing by topic, not by change | 2–4 max |
 | Routed "kerning" to letterform spacing | Took the word literally | Usually tracking → `microtypography` |
 | Font swap recommended for a spacing problem | Skipped `typography-critique` §4 | Diagnose before prescribing |
 | Body text set with no accessibility check | Co-load rule ignored | Always add `typography-accessibility` |
@@ -183,7 +186,7 @@ Unverified: <what was not checked in a rendered context>
 
 - ❌ Answering "what line-height should I use?" directly. — That's
   `body-text-and-reading`, and the answer depends on measure, size, and face.
-- ❌ Loading all twenty skills for "pick a font."
+- ❌ Loading all twenty-one skills for "pick a font."
 - ❌ Routing "the text looks bad on mobile" to `typeface-selection`. — Almost always
   `responsive-typography` + `body-text-and-reading`.
 - ❌ Treating `typography-audit` and `typography-critique` as interchangeable. —

@@ -95,7 +95,54 @@ faces (`typeface-pairing`). This skill supplies the evidence those use.
   x-height, and baseline. For other scripts, route to `international-typography`
   before applying any of it.
 
-## 6. Classification as visible evidence
+## 6. How letterforms become pixels
+
+Everything above describes vector outlines. The reader sees pixels, and the
+conversion is lossy and outside your control. Rutter's framing: removing obstacles
+to reading "means understanding how letterforms end up represented on the screen."
+
+**Resolution sets the floor.** Most laptop and desktop screens sit around **140 ppi**;
+high-resolution displays reach a few hundred; print runs at 600 dpi and up. A face
+whose thins survive on paper may not have enough pixels to exist on a 140 ppi panel.
+
+**Rasterisation is lossy and subjective.** Turning vectors into dots "is inherently
+lossy. Consequently, letterforms can be distorted or even made illegible when
+converted into groups of pixels." And it is *subjective*: different rendering engines
+"rasterise the font files with varying degrees of success and significantly different
+matrices of pixels for the same letterforms."
+
+**You are not rendering — the platform is.** Each operating system has a text
+rendering engine (sometimes more than one), and each browser chooses which to use. So
+**two browsers on the same OS can produce visibly different text**, and that can
+change between OS versions and browser releases. Users can tweak the settings too.
+
+**Hinting** is instructions inside the font telling the rasteriser how to fit
+outlines to the pixel grid. Most webfonts ship *autohinted*, because full manual
+hinting is enormously expensive. Tim Ahrens, quoted by Rutter: initial improvements
+come quickly, "but as you get closer to perfection the effort that is necessary to
+achieve improvements increases," with Verdana as the extreme case "where the hinting
+probably took weeks or months." Autohinting is "far more successful for anti-aliased
+fonts than for black and white rendering, and is much better than no hinting at all."
+
+**The platform differences that actually matter:**
+
+- **Only Windows uses hinting.** iOS, macOS, Android, and Linux make no use of hints.
+  A beautifully hinted font buys you nothing on most of your traffic.
+- **Handheld devices use greyscale smoothing, not subpixel anti-aliasing** — physical
+  subpixels sit in a row, so subpixel antialiasing doesn't work well once the device
+  rotates. Windows-based mobile combines greyscale smoothing with hinting.
+
+**What this means for choosing and setting type:**
+
+| Implication | Action |
+|---|---|
+| You cannot control rasterisation | Choose faces that survive it; don't tune for your own screen |
+| High contrast and hairlines are first casualties | Prefer low–moderate contrast at text sizes |
+| Small counters fill in at low resolution | Check counters at the smallest real size |
+| Rendering differs per browser *and* per OS | Check type across platforms, not just yours |
+| Reversed (light-on-dark) text reads heavier | Test it; consider a lighter weight or `GRAD` (see `variable-fonts`) |
+
+## 7. Classification as visible evidence
 
 Coles' classifications are descriptions of form, which is what makes them useful —
 each implies what you'll see.
@@ -162,7 +209,7 @@ a taxonomy to defend. And the humanist serif subtypes are **regional and histori
 (Venetian, French, Dutch, English); if you can't see the distinction in the specimen,
 don't claim it.
 
-## 7. Failure patterns
+## 8. Failure patterns
 
 | Pattern | Cause | Fix |
 |---|---|---|
@@ -174,7 +221,7 @@ don't claim it.
 | Applied Latin anatomy to an Arabic face | Wrong frame entirely | Route to `international-typography` |
 | Font looks thin and washed out in dark mode | Light weight, low contrast reversed | Increase weight for reversed text |
 
-## 8. Evaluation procedure
+## 9. Evaluation procedure
 
 1. Render `a g e s t R Q 1 l I 0 O` at the **real** use size.
 2. Measure or eyeball x-height against cap height. Tall, moderate, or short?
@@ -185,7 +232,7 @@ don't claim it.
 7. Check ascender/descender length; note the line-height implication.
 8. Name the class from what you observed, not from the foundry's marketing.
 
-## 9. Output format
+## 10. Output format
 
 ```
 Face: <name>
@@ -200,7 +247,7 @@ Class (from evidence): <class>
 Implications: <line-height, size compensation, suitable roles>
 ```
 
-## 10. Examples
+## 11. Examples
 
 **"Why does our 14px UI text feel harder to read than the old font at the same
 size?"**
@@ -213,7 +260,7 @@ size?"**
 > to 15px and accept the aperture cost, or pick a face with opener apertures for
 > UI and keep the geometric one for display.
 
-## 11. Counterexamples
+## 12. Counterexamples
 
 - ❌ "It's a sans serif, so it's clean and modern." — Sans covers Grotesque,
   Neo-Grotesque, Humanist, Neo-Humanist, and Geometric, which look and behave
@@ -227,7 +274,7 @@ size?"**
 - ❌ "The classification says Humanist, so it'll feel warm." — Classification is a
   lens over visible form, not a guarantee of feeling.
 
-## 12. Source citations
+## 13. Source citations
 
 - Coles, *The Anatomy of Type* — **primary source.** The warning that "there is no
   universal classification system… type is not biology — a typeface doesn't have a
@@ -238,6 +285,13 @@ size?"**
   Humanist/Transitional/Rational/Contemporary serif, Inscribed, Grotesque,
   Neo-Grotesque, Humanist, Neo-Humanist sans, and slab variants; comparing similar
   typefaces from evidence.
+- Rutter, *Web Typography* — "How fonts render on screens": screen resolution limits
+  (~140 ppi typical desktop vs 600 dpi print); rasterisation as "inherently lossy" and
+  subjective across engines; each OS having a text rendering engine and each browser
+  choosing one, so two browsers on one OS can differ; hinting and autohinting, with
+  Tim Ahrens on diminishing returns and Verdana taking "weeks or months"; **only
+  Windows uses hinting**; handhelds using greyscale smoothing rather than subpixel
+  anti-aliasing because subpixels sit in a row and fail on rotation.
 - Lupton, *Thinking with Type* 3e — anatomy and alignment; cap height, x-height,
   baseline as the Latin axes; other writing systems' different points of focus.
 - Lupton (ed.), *Type on Screen* — x-height, descender overhang, and why longer
