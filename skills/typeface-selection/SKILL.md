@@ -27,7 +27,7 @@ Do not name a font before you have these:
 - **Scripts and languages** required, now and planned.
 - **Weights and styles** genuinely needed (including true italics).
 - **Figure requirements** — tabular for data, oldstyle for prose. Confirm the file
-  actually ships them (`references/opentype-features.md`).
+  actually ships them (`../type/references/opentype-features.md`).
 - **Licence and budget** — web, app, desktop, redistribution.
 - **Performance budget** — see `font-loading-and-performance`.
 - **Brand tone**, and any existing system constraint.

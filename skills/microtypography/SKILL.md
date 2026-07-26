@@ -49,7 +49,7 @@ enhance the legibility of texts."*
   Hyphen, en dash, and em dash are three different characters with three
   different jobs.
 - **Turn standard ligatures off wherever you letterspace** — a tracked `fi`
-  ligature reads as broken. See `references/opentype-features.md`.
+  ligature reads as broken. See `../type/references/opentype-features.md`.
 - **Capitals and small caps always need letterspacing.** Set solid, they read as a
   cramped block. Lowercase set for text does not.
 
@@ -285,7 +285,7 @@ Unverified: <what was not checked in a rendered context>
   widows and orphans; §61 optical trickery; §76 "kern only if you have to" — the
   kerning/tracking confusion, kerning being the space between two specific glyphs;
   and the rule that letter spacing must never use absolute units. Full index in
-  `references/universal-principles-index.md`.
+  `../type/references/universal-principles-index.md`.
 - Rutter, *Web Typography* — hyphenation and justification on the web.
 - WCAG 2.2 §1.4.12 (text spacing override).
 - MDN — [`text-wrap`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap):

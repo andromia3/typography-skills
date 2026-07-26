@@ -66,7 +66,7 @@ If you have none of these, say what you're assuming before you answer.
 | Inside the range | Judge with your eyes; do not tune to hit a count |
 
 The canon genuinely disagrees here (Lupton 55–70, Rutter 45–75, Material 40–60,
-Brown rejecting counting altogether). See `references/corpus-conflicts.md`.
+Brown rejecting counting altogether). See `../type/references/corpus-conflicts.md`.
 Field trick (Walton, via Stocks): put an asterisk before the 45th character and
 after the 75th, then see where lines actually break.
 

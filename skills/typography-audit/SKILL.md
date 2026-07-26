@@ -179,5 +179,5 @@ NOT CHECKED: <list, with reason>
 - Brown, *Flexible Typesetting* — responsive behaviour across the whole band.
 - Stocks, *Universal Principles of Typography* — a retrieval-friendly index of
   principles to audit against.
-- This pack's `references/source-hierarchy.md` for resolving conflicts between
+- This pack's `../type/references/source-hierarchy.md` for resolving conflicts between
   findings.

@@ -212,4 +212,4 @@ Highest-return change: <one thing>
   typographic colour as a squint test for density; §98 **Nix's hierarchy of
   typographic needs** (Charles Nix, Monotype) — font functionality → font security →
   typographic love and belonging → typographic esteem → self-actualization; §99 "it
-  depends." Full index in `references/universal-principles-index.md`.
+  depends." Full index in `../type/references/universal-principles-index.md`.

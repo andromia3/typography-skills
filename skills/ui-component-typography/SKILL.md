@@ -70,7 +70,7 @@ to body-text logic. WCAG 1.4.12 still requires the layout to survive a 1.5 overr
 .prose         { font-variant-numeric: oldstyle-nums proportional-nums; }
 ```
 
-Full tag/property lookup in `references/opentype-features.md`.
+Full tag/property lookup in `../type/references/opentype-features.md`.
 
 Lining figures are usually cap height or slightly less and are normally set on a
 constant (en) body, which is what makes them tabular-capable (Hochuli).

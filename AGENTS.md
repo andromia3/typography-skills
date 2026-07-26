@@ -40,7 +40,7 @@ context.
 
 ## Conflict resolution
 
-Highest authority first. Full version in `references/source-hierarchy.md`.
+Highest authority first. Full version in `skills/type/references/source-hierarchy.md`.
 
 1. Accessibility standards and browser behavior (WCAG 2.2, MDN, real rendering)
 2. User and product context
