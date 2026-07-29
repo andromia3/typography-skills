@@ -23,6 +23,9 @@ payload, its licence, and its maintenance.
 - Combined **payload budget**.
 - Script coverage for **both** faces — a pairing breaks when only one supports a
   required language.
+- **Licence for the second face**, specifically. A face can pass every visual test
+  and still be unusable if its licence doesn't cover this medium — check this before
+  finalizing, not after. (Stocks)
 
 ## 3. Invariant principles
 
@@ -47,7 +50,12 @@ payload, its licence, and its maintenance.
 2. **A superfamily.** Serif and sans sharing skeleton and metrics — designed to be
    combined, and metric-compatible for free.
 3. **Two families with a deliberate shared trait** and clear difference.
-4. **Three or more.** Almost always a system that lost control.
+4. **Three or more.** Almost always a system that lost control. The one common
+   exception: adding a **monospace face for code or tabular data** alongside an
+   existing display/text pair is a functional addition, not an expressive one —
+   Stocks treats it as a distinct, low-risk fourth role rather than "another
+   typeface competing for a voice." Judge it against `ui-component-typography`'s
+   requirements, not this skill's contrast/harmony rules.
 
 **Start from an anchor typeface.** Rutter's method, and the one to default to:
 pick one face first to set a uniting voice and act as the reference point for every
@@ -69,6 +77,26 @@ produce the "something shared" this skill requires, for free.
 | Proportion / width | Stroke contrast |
 | Historical era or design intent | Structure (geometric ↔ humanist) |
 | Mood | Weight and scale |
+| Shape of `a g r y` specifically, or terminal treatment | Formality, temperature, trend value |
+
+Lupton splits this into objective and subjective qualities — width/proportion,
+x-height, the shape of `a g r y`, extender length, stress/verticality, and terminal
+style are the objective, checkable half; coldness/warmth, formality, memory, and
+trend value are the subjective half a pairing is actually chasing. Name at least one
+concrete objective match before relying on a subjective one — "they both feel
+1970s" is harder to defend than "both have a lilting `a` and matching narrow
+proportions." (Lupton)
+
+**Kupferschmid's font matrix** — a construction-based method that needs no
+classification vocabulary at all, useful when two faces don't fit any genre
+cleanly. Read a face in three layers: **skeleton** (the form model — dynamic/penlike,
+rational/mechanized, or geometric), **flesh** (contrast and whether serifs are
+present), and **skin** (finer details — specific serif shape, texture, ornament).
+Then pair by the rule the layers predict: same skeleton pairs harmoniously even with
+different flesh; different skeleton but matching flesh (same contrast, same
+serif-or-not) reads as a near-miss and fails — there isn't enough differentiation to
+read as intentional. Treat it as a diagnostic lens, not a rulebook — not every face
+sorts cleanly into one skeleton. (Stocks, via Kupferschmid & Schöndorfer)
 
 **The reliable combinations.**
 
@@ -86,8 +114,13 @@ produce the "something shared" this skill requires, for free.
 - Two geometric sans — near-identical skeletons.
 
 **Match apparent size at the join.** Two faces at the same nominal size will look
-mismatched if their x-heights differ. Compensate with size, then re-check the
-heading's measure and space.
+mismatched if their x-heights differ. The concrete technique: hold one face's size
+fixed, then adjust the other's point size up or down until the x-heights visually
+align — not until the nominal sizes match. Lupton's example: a 40pt display face
+paired with a second face set at 37.8pt because that's the size where their
+x-heights actually line up. Adjust one parameter at a time — size, then weight if
+the pairing still feels off, then check whether ascenders/descenders now clash and
+need a line-height correction. Re-check the heading's measure and space afterward.
 
 ## 5. Failure patterns
 
@@ -110,7 +143,9 @@ heading's measure and space.
 5. Squint. The two should read as clearly different roles, not as a near-miss.
 6. Verify both faces cover every required script and style.
 7. Check combined payload against budget.
-8. Test the worst case: longest heading, smallest subhead, dark mode.
+8. Confirm the second face's licence actually covers this medium — a pairing that
+   fails on licence fails regardless of how well steps 3–6 went.
+9. Test the worst case: longest heading, smallest subhead, dark mode.
 
 ## 7. Output format
 
@@ -121,6 +156,7 @@ Shared: <trait>
 Contrasted: <trait>
 Apparent size at join: <compensation applied>
 Scripts covered by both: <yes/no>
+Licence covers this medium: <yes/no>
 Combined payload: <n> KB
 Rejected alternative: <pair> — <reason>
 ```
@@ -157,6 +193,12 @@ Rejected alternative: <pair> — <reason>
 - ❌ "Same point size keeps them consistent." — Match *apparent* size; x-heights
   differ.
 - ❌ Adding a second family to get a bold heading, when the family already has one.
+- ❌ "It reads great in the deck, ship it." — Without checking the second face's
+  licence for this medium, the pairing can be dead on arrival regardless of how it
+  reads.
+- ❌ "Different skeleton, but they're both low-contrast sans without serifs, so
+  they'll pair fine." — Same flesh, different skeleton is exactly the combination
+  Kupferschmid's font matrix predicts will fail; not enough differentiation.
 
 ## 10. Source citations
 
@@ -171,6 +213,15 @@ Rejected alternative: <pair> — <reason>
   the majority of the content); find complements through contrast; combine typefaces
   with similar structure and form; stick with a single family where you can; pair
   typefaces from the same designer or the same foundry.
-- Lupton, *Thinking with Type* 3e — type families, hierarchy, and contrast.
+- Lupton, *Thinking with Type* 3e — type families, hierarchy, and contrast; pairing
+  typefaces on objective qualities (width/proportion, x-height, shape of `a g r y`,
+  extender length, terminals, stress) and subjective ones (warmth, formality,
+  memory, trend); the wine-and-cheese framing of contrast plus shared ground.
 - Stocks, *Universal Principles of Typography* — width and weight as palette tools;
-  a typographic scale is already a design system.
+  a typographic scale is already a design system; pairing type only if you have to;
+  superfamilies and shared-designer/foundry as the two easiest pairing hacks;
+  **Kupferschmid's font matrix** (skeleton/flesh/skin) as a classification-free
+  pairing method; matching x-height across faces by adjusting the secondary face's
+  point size rather than trusting nominal size; checking the second face's licence
+  before finalizing a pairing; a monospace addition as a functional, low-risk fourth
+  role rather than an expressive third typeface.

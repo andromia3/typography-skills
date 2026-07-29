@@ -123,6 +123,22 @@ the rag itself: it should look accidental, not form shapes, stair-steps, or a
 near-justified edge that reads as a mistake. Avoid more than two consecutive
 hyphenated lines.
 
+**CSS controls for hyphenation, beyond on/off.** `hyphens: auto` is a blunt switch;
+CSS Text Level 4 exposes the actual dials Rutter names for controlling a hyphenated
+ladder and the rag it produces (support is inconsistent — verify on MDN before
+relying on any of these in production, same caveat as `text-wrap`):
+
+| Property | Controls |
+|---|---|
+| `hyphenate-limit-lines: 2` | Caps consecutive hyphenated lines — enforces the "no more than two" rule in code rather than by eye |
+| `hyphenate-limit-chars: 6 3 2` | Word/before/after minimums — don't hyphenate a word under 6 characters, leave ≥3 before the break and ≥2 after |
+| `hyphenate-limit-zone: 2em` | The hyphenation zone — how much ragged space is tolerated before the engine hyphenates rather than leave a gap; `0` (default) is minimum rag, a larger value trades even spacing for more ragged edge |
+| `hyphenate-limit-last: always` | Forbid hyphenating the last line of a paragraph or column — a targeted fix for one kind of orphan |
+
+**Ampersands vary a lot by design** — some faces keep the historical *et* ligature
+shape, others have drifted closer to a treble clef. That range is exactly why an
+over-elaborate display ampersand reads as noise in running text (Rutter).
+
 **Orphans and widows.** A single word alone on the last line of a paragraph, or a
 single line stranded at the top or bottom of a column. In CSS, `orphans`/`widows`
 handle column breaks; `text-wrap: pretty` addresses the last-line orphan and
@@ -286,7 +302,10 @@ Unverified: <what was not checked in a rendered context>
   kerning/tracking confusion, kerning being the space between two specific glyphs;
   and the rule that letter spacing must never use absolute units. Full index in
   `../type/references/universal-principles-index.md`.
-- Rutter, *Web Typography* — hyphenation and justification on the web.
+- Rutter, *Web Typography* — hyphenation and justification on the web; the
+  `hyphenate-limit-lines`/`hyphenate-limit-chars`/`hyphenate-limit-zone`/
+  `hyphenate-limit-last` properties for controlling a hyphenated ladder and rag
+  zone in code; ampersand forms varying by design and the case for restraint.
 - WCAG 2.2 §1.4.12 (text spacing override).
 - MDN — [`text-wrap`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap):
   `balance` is supported in Chrome/Edge 114+, Firefox 121+, Safari 17.5+;

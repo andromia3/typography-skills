@@ -75,8 +75,13 @@ an optimum*. Then adjust for apparent size: a face with a tall x-height at 16px
 reads larger than one with a short x-height at the same value. Match apparent
 size, not nominal size, when swapping typefaces.
 
-**Line-height.** 1.3–1.7 unitless for body text is the working range (Latin).
-Push higher as measure lengthens — a long line needs more vertical separation for
+**Line-height.** 1.3–1.7 unitless for body text is the working range (Latin);
+Santa Maria's range is close but wider, 1.2–1.8, and she's explicit that "a true
+ideal line-height doesn't exist" — the typeface's design (wide/decorative faces
+want more air) and the specific setting (a narrow hanging caption can run tighter
+than the article beside it) both move the number, so treat any range as a
+starting point to trial against the real typeface, not a value to look up. Push
+higher as measure lengthens — a long line needs more vertical separation for
 the return sweep to land correctly. Push lower as measure shortens. Tighter than
 1.3 for a full paragraph is almost always wrong. Always use a **unitless** value so
 it inherits proportionally.
@@ -90,7 +95,11 @@ paragraph is usually a default nobody chose. See `microtypography` on typographi
 colour for reading that texture.
 
 **Reading distance** scales everything. Kiosk and TV need far larger sizes than
-their "equivalent" desktop values.
+their "equivalent" desktop values. To evaluate this honestly rather than guess,
+Brown's technique: zoom the rendered composition to simulate the actual viewing
+distance (or better, view it on a real device at its real distance — phone in
+hand, TV across a room) and re-judge size and measure at that simulated
+closeness, not at your editor's default zoom level.
 
 ## 5. Failure patterns
 
@@ -171,9 +180,14 @@ Unverified: <anything not checked in a rendered context>
 - Rutter, *Web Typography* — 45–75 range; 42 CPL satisfactory; ~40 CPL on a
   phone at default size; apparent size and x-height compensation.
 - Brown, *Flexible Typesetting* — measure as a visual decision; Frere-Jones,
-  "we read with our eyes, not with rulers."
+  "we read with our eyes, not with rulers"; zooming a composition to simulate
+  real viewing distance/closeness as an evaluation technique, rather than judging
+  size at an editor's default zoom.
 - Latin, *Better Web Typography* — 1.3–1.7 line-height; the size/line-height/
   measure triangle.
+- Santa Maria, *On Web Typography* — 1.2–1.8 line-height as a starting range;
+  there's no universal ideal, it's set per typeface and per setting (a narrow
+  hanging caption legitimately tighter than the body beside it).
 - Lupton (ed.), *Type on Screen* — 45–75 measure on screen.
 - Elam, *Typographic Systems of Design* — default leading of about 20% of text size
   as a starting point designers too readily accept; developing sensitivity to the

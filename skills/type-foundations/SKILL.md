@@ -51,6 +51,13 @@ precision matters.
 equally above and below the text. This is why text sits with extra space above the
 cap-height and below the baseline — and why `text-box-trim` exists.
 
+**Legibility vs. readability.** *Legibility* is glyph-level: can a reader tell
+characters apart at all — `1 l I`, `0 O o`, `q p`, `d b`. *Readability* is text-level:
+whether the whole passage is comfortable to get through, which legibility feeds but
+doesn't determine — tracking, leading, measure, and plain boring content all affect
+readability independent of the typeface. A legible face can still be unreadable if
+poorly set; the two questions get asked and fixed differently. (Stocks)
+
 ## 4. CSS units for type
 
 | Unit | Relative to | Use for |
@@ -137,6 +144,8 @@ Implication: <what changes as a result>
   the user may change, and apparent size varies by typeface.
 - ❌ "Leading and line-height are the same thing." — Related, offset by the font
   size, and the difference matters when translating print specs.
+- ❌ "It's legible, so it's readable." — Legibility is glyph-level distinction;
+  readability also depends on tracking, leading, measure, and content. (Stocks)
 
 ## 11. Source citations
 
@@ -146,7 +155,9 @@ Implication: <what changes as a result>
   type; the caution that `ch` "varies from font to font so it's not usually
   suitable for layout purposes"; "a pixel is not a pixel" and subpixel rendering.
 - Stocks, *Universal Principles of Typography* — the em square "at the heart of it
-  all"; font metrics; characters vs. glyphs.
+  all"; font metrics; characters vs. glyphs; legibility (glyph-level distinction,
+  tested via `1lI`/`0Oo`/`qp`/`db`) vs. readability (text-level, also driven by
+  tracking, leading, measure, and content) as related but distinct questions.
 - Latin, *Better Web Typography* — anatomy vocabulary; practical unit use.
 - Hochuli, *Detail in Typography* — the line and linespacing as craft terms.
 - MDN — [`line-height`](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height),

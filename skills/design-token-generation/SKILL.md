@@ -36,7 +36,10 @@ enforced is a suggestion.
   Components consume semantics. Semantics consume primitives. **Never let a
   component reference a primitive directly** — that's how a scale erodes.
 - **Name by role, never by appearance.** `text-body`, not `text-16` or `text-grey`.
-  Appearance names become lies the first time the value changes.
+  Appearance names become lies the first time the value changes. This is
+  Kholmatova's naming argument applied to type: a presentationally-named token
+  "can only be pink" — confined to the value it was named after — while a
+  role-based name survives the value changing under it.
 - **Never name by size number alone.** `text-14` blocks you from ever changing 14.
 - **Line-height tokens must be unitless.**
 - **A token set is a constraint.** If arbitrary values remain possible, tokens are
@@ -156,6 +159,10 @@ Fluid strategy: <clamp-in-token | derived | n/a>
 
 ## 10. Source citations
 
+- Kholmatova, *Design Systems* (ch. 5, "Shared Language") — naming brings an
+  object into existence; a presentational name confines an object's future to
+  its current style. The general token-tier and naming argument this skill
+  applies to typography; see the `design-tokens` skill for the full treatment.
 - Stocks, *Universal Principles of Typography* — a typographic scale is already a
   design system; a full system documents how typographic elements interact with
   other elements and offers a limited set of options via constraints.

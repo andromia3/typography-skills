@@ -22,8 +22,9 @@ faces (`typeface-pairing`). This skill supplies the evidence those use.
 
 - The **actual specimen** at the size and medium of use — anatomy read at 200px
   tells you little about behavior at 14px.
-- The **characters that discriminate**: `a g e s t R Q 1 l I 0 O`. These carry most
-  of a face's identity.
+- The **characters that discriminate**: `a g e s t R Q 1 l I 0 O`, plus the mirrored
+  pairs `q p` and `d b` — a legibility test independent of the aperture/terminal
+  reading below (Stocks). These carry most of a face's identity.
 - Whether you're judging **text** or **display** performance.
 
 ## 3. Invariant principles
@@ -198,7 +199,7 @@ geometric in construction and display in intent. Don't force one bucket.
 
 | Class | Visible signals |
 |---|---|
-| Grotesque / Geometric / Humanist Slab | Slab serifs on the corresponding sans structure |
+| Grotesque / Geometric / Humanist Slab | Slab serifs on the corresponding sans structure — chunky, present serifs give slabs an advantage surviving rasterization at both light and heavy weights, which is part of why they're common on screen (Lupton, *Type on Screen*) |
 | Formal Script | Connected, calligraphic, high contrast — never for extended text |
 | Casual Script | Brush or hand lettering, looser, informal |
 | Blackletter / Textura | Dense angular vertical strokes; very low legibility for modern readers |
@@ -228,7 +229,8 @@ don't claim it.
 3. Check stroke contrast. Will the thins survive this size and screen?
 4. Check apertures on `c e s a`. Open or closing?
 5. Check counters at the smallest use size — do they fill in?
-6. Distinguish `1 l I` and `0 O`. Critical for any data, code, or ID.
+6. Distinguish `1 l I` and `0 O`, and check the mirrored pairs `q p` / `d b`.
+   Critical for any data, code, or ID.
 7. Check ascender/descender length; note the line-height implication.
 8. Name the class from what you observed, not from the foundry's marketing.
 
@@ -243,6 +245,7 @@ Counters: <open|tight> at <size>
 Terminals: <ball|flared|sheared|blunt>
 Axis: <angled|vertical>
 1/l/I and 0/O: <distinguishable|ambiguous>
+q/p and d/b: <distinguishable|ambiguous>
 Class (from evidence): <class>
 Implications: <line-height, size compensation, suitable roles>
 ```
@@ -295,9 +298,10 @@ size?"**
 - Lupton, *Thinking with Type* 3e — anatomy and alignment; cap height, x-height,
   baseline as the Latin axes; other writing systems' different points of focus.
 - Lupton (ed.), *Type on Screen* — x-height, descender overhang, and why longer
-  extenders demand more line spacing.
+  extenders demand more line spacing; slab serifs' chunky endstrokes surviving
+  rasterization well in both light and heavy weights.
 - Santa Maria, *On Web Typography* — x-height as a tradeoff, not a virtue;
   letters converging as x-height grows.
 - Latin, *Better Web Typography* — anatomy walkthrough; contrast comparison.
 - Stocks, *Universal Principles of Typography* — metrics, the em square,
-  classification's uses and limits.
+  classification's uses and limits; the `1lI`/`0Oo`/`q p`/`d b` legibility test.

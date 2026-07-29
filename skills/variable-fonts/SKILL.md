@@ -94,7 +94,12 @@ cases for `font-variation-settings` — there is no standard property for it.
 **Parametric axes** go further still, exposing thin-stroke, thick-stroke, counter
 width, and similar low-level parameters. Powerful for fine-tuning a face to a
 specific context; easy to produce something the type designer would not recognise.
-Use sparingly and compare against the designed instances.
+Use sparingly and compare against the designed instances. Custom axes are
+arbitrary — a type designer can expose almost any parameter of the design this
+way, down to contrast, x-height, serif shape, or the length of a single glyph's
+tail (Rutter cites a Q's tail as a real example); the four-character tag is
+whatever the foundry chose, so read the specimen rather than guessing at what a
+custom axis controls.
 
 **Multiplexed fonts** solve the same reflow problem a different way: every weight
 occupies identical horizontal space by design, so switching weight never changes
@@ -211,4 +216,10 @@ Reduced-motion respected: <yes/n-a>
   §87 parametric axes; §88 the inheritance problem; §27 avoid faux styles.
 - Brown, *Flexible Typesetting* — designing typographic systems that adapt rather
   than fixed instances; the conceptual case for continuous ranges.
-- Rutter, *Web Typography* — OpenType foundations that variable fonts extend.
+- Rutter, *Web Typography* — OpenType foundations that variable fonts extend;
+  custom axes as arbitrary designer-defined parameters (contrast, x-height, serif
+  shape, individual glyph details) reachable only through
+  `font-variation-settings`. **His browser-support and format-string details
+  (`format('woff-variations')`, multiple repeated `@font-face` rules for
+  fallback, an early-2018 viability estimate) are from 2017 and superseded —
+  variable font support is now universal; don't carry those specifics forward.**

@@ -98,7 +98,10 @@ with the full value available on hover/focus/detail. Truncating by default becau
 the design assumed English is a localisation bug.
 
 **Alignment in tables.** Numbers right-aligned (or decimal-aligned) so magnitudes
-compare; text left-aligned; headers matching their column's data alignment.
+compare; text left-aligned for a familiar entry point into reading; a column of
+icons or single glyphs centered, to avoid the lopsided look a left or right rag
+gives a symbol column. Headers match their column's data alignment. (Lupton,
+*Type on Screen*)
 
 **Case.** Use `text-transform: uppercase` rather than typing capitals, so screen
 readers, search, and translation receive the real string. Add tracking whenever you

@@ -104,6 +104,20 @@ generous line-height. Never assume character order equals visual order.
 Japanese and Chinese often much shorter. Design containers to grow. See
 `ui-component-typography`.
 
+**Quotation marks are not universal glyphs.** English "…" is one convention among
+several: German uses „…" (low-9 opening, high-6 closing), French uses «…» (with a
+non-breaking space against the enclosed text), and other locales vary again
+(Rutter). Hardcoding English curly quotes into a smart-quote transform is a
+Latin-English assumption exactly like the ones this skill exists to catch. Drive
+quote glyphs from the `lang` attribute — either the CSS `quotes` property keyed to
+`:lang()`, or a locale-aware content pipeline — rather than one fixed substitution
+rule for every language.
+
+```css
+:lang(de) { quotes: "„" "\201C" "‚" "\2018"; }
+:lang(fr) { quotes: "«" "»" "‹" "›"; }
+```
+
 ## 5. Failure patterns
 
 | Pattern | Cause | Fix |
@@ -190,4 +204,13 @@ Not tested: <scripts not rendered with real content>
   [`font-synthesis`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-synthesis).
 - Latin, *Better Web Typography* — language ranges and why the Latin range isn't
   always sufficient.
-- Rutter, *Web Typography* — `unicode-range` and subsetting by script.
+- Rutter, *Web Typography* — `unicode-range` and subsetting by script; quotation
+  marks varying by locale (German „…", French «…» with non-breaking spaces) and
+  driving them from `lang` via the CSS `quotes` property rather than one hardcoded
+  transform.
+
+**Note on Elam's *Typographic Systems of Design*:** the only text available for this
+corpus is the German edition (the English scan has no text layer). Elam's subject —
+compositional/grid systems — doesn't cover scripts, bidi, or localisation, so it
+contributes nothing specific to this skill; its content is fully used in
+`typography-layout-systems` instead. No claims here are attributed to Elam.

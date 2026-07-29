@@ -35,6 +35,14 @@ The shift Brown argues for: stop designing screens and start designing
   and line-height that suited that measure no longer do.
 - **Never disable user zoom.** `user-scalable=no` and `maximum-scale=1` violate
   WCAG 1.4.4.
+- **Avoid `text-size-adjust` entirely.** `text-size-adjust: none` blocks mobile
+  browsers' automatic resizing outright — a real accessibility problem, not a
+  theoretical one. `text-size-adjust: 100%` (the common "fix" for iOS
+  orientation-change resizing) just suppresses that resize instead of solving
+  anything. Browser support and behavior are inconsistent enough that Brown's
+  standing recommendation is to leave the property alone rather than reach for it.
+  (Don't confuse it with `font-size-adjust`, an unrelated property for matching
+  fallback-font apparent size — see `font-loading-and-performance`.)
 - **Never size type in raw viewport units alone.** `font-size: 4vw` doesn't respond
   to user zoom at all, because zoom doesn't change viewport units proportionally.
   Always combine with a rem term.
@@ -90,6 +98,25 @@ the margins absorb the rest.
 size; don't shrink type to buy characters. Below ~16px body on mobile, tap-target
 and legibility problems arrive before typographic ones.
 
+**Derive breakpoints from the type system, not device widths.** Brown's
+alternative to picking breakpoints at conventional device sizes (320/768/1024…):
+derive them from the typographic decisions you already made.
+
+- **From text-block limits.** If you've set a maximum measure (say 35em) and a
+  loosest-case margin (say 5.1em per side at that measure), the point where the
+  text block plus margins hits that combined width *is* a defensible breakpoint —
+  it's the width where the current setting stops working, not an arbitrary device
+  class.
+- **From the modular scale.** A number already in your type/spacing scale can
+  supply the breakpoint value directly — set measure and margins from separate
+  scale steps, or use a larger scale step as the breakpoint itself. There's no
+  single correct mapping; treat the scale as a source of candidate values to
+  sanity-check a visual decision against, not a formula to solve.
+
+Either way the point is the same: a breakpoint should mark where *pressure* on
+the text block (line getting too long, margins going slack) becomes visible, not
+where a device category conventionally changes. (Brown)
+
 ## 5. Failure patterns
 
 | Pattern | Cause | Fix |
@@ -102,6 +129,8 @@ and legibility problems arrive before typographic ones.
 | Body shrunk on mobile to fit more words | Optimizing CPL over legibility | Accept ~40 CPL; keep the size |
 | Fluid sizes land off-token | Fluid applied to dense UI | Use stepped sizes for UI, fluid for display |
 | Two-word heading becomes 3 ragged lines | No wrap control | `text-wrap: balance` |
+| Breakpoints feel arbitrary, chosen at 768/1024 | Picked at device widths, not where the setting fails | Derive from text-block limits or the modular scale |
+| iOS text stops resizing on rotation | `text-size-adjust: 100%` used as a "fix" | Remove it; don't reach for `text-size-adjust` at all |
 
 ## 6. Evaluation procedure
 
@@ -162,7 +191,9 @@ Unverified: <what wasn't rendered>
 - Brown, *Flexible Typesetting* — **primary source.** Designing systems rather than
   individual screens; typographic relationships across viewport sizes; responsive
   line length; measure as a visual decision; pressure and relief between size,
-  spacing, and available space.
+  spacing, and available space; deriving breakpoints from text-block limits or the
+  modular scale instead of device widths; `calc(1em + 2vw)`-style sizing as the
+  accessible pattern; warning against `text-size-adjust`.
 - Rutter, *Web Typography* — em/rem/ch units; responsive typography; why `ch`
   varies by font and is unreliable for layout.
 - Lupton (ed.), *Type on Screen* — mobile and responsive composition; dynamic

@@ -52,9 +52,39 @@ matters most — this is genuine continuous reading. Cap the column; let margins
 absorb extra viewport width. Full-bleed images may break the column; text should
 not.
 
+**Vertical rhythm, concretely.** "Space above binds, space below separates" is the
+principle; this is the arithmetic that makes it real (Rutter). Set the page's
+rhythm unit from the body text's line-height in pixels — 16px text at 1.3125
+line-height gives a 21px unit. Every other vertical measurement on the page —
+paragraph spacing, heading margins, caption line-height — should be a multiple or
+clean fraction of that unit:
+
+- **Paragraph spacing** = the line-height itself (or half, if tighter spacing is
+  wanted), not the browser's default `1em` margin, which is a different, unrelated
+  number and will visibly throw off the beat.
+- **Headings and asides at a different size** must recompute their own
+  `line-height` to still land on a multiple of the unit — an 18px subhead over a
+  21px rhythm needs `line-height: 21÷18 = 1.167`, and its margins should equal that
+  same value (or an asymmetric split, e.g. 1.5× above / 0.5× below, that still sums
+  to a whole multiple). Don't reach for `line-height` alone to add air around a
+  heading — if it wraps to two lines, oversized `line-height` reads as two stacked
+  headings instead of one.
+- **Non-text elements (images, embeds, forms) may break the rhythm.** Don't crop
+  content images just to preserve the beat — restart the rhythm when running text
+  resumes after the interruption; the tail shouldn't wag the dog.
+- **Don't force a print baseline grid onto the web.** Browsers lay out block-by-
+  block from the top, not text-outward from a baseline, so chasing true
+  baseline-to-baseline alignment (the print definition of vertical rhythm) fights
+  the platform. A consistent multiple-of-the-unit rhythm gets the same reader
+  benefit without it.
+
 **Subheads.** Give them clear separation from the preceding paragraph and tight
 proximity to the following one. Two levels is usually enough. Keep the semantic
-heading level correct independently of size.
+heading level correct independently of size. Style them as visibly *part of* the
+same hierarchical system as the headline (a scaled-down echo of its treatment, not
+an unrelated style) while staying clearly smaller — that visual tie-in is what
+tells a scanning reader "this belongs to that headline, and is one level down"
+(Santa Maria).
 
 **Pull quotes.** They exist to pull a scanner into the text. Rules:
 - Use text that already appears in the article; don't introduce new content.
@@ -107,6 +137,12 @@ styling that floats free of it is decoration that only sighted users receive. A
 
 **Captions.** Small, clearly subordinate, consistently placed, and **still meeting
 contrast**. Grey captions are the most common contrast failure on editorial sites.
+Print captions can run 6–8pt; that size is illegible on screen — Santa Maria's
+floor is **around 12px** on the web, higher on lower-DPI displays, as a starting
+point rather than a rule to hit exactly. In a narrow hanging caption (a margin
+note beside the article column), set the line-height tighter than the body text's
+— the narrow measure both permits and needs it, and it helps the caption read as
+its own block rather than a continuation of the adjacent body copy.
 
 **Figures and footnotes.** Use `<figure>`/`<figcaption>` for semantics. Footnotes
 need a return path; a link that leaves the reader stranded is a defect.
@@ -149,6 +185,9 @@ degrade silently. See `microtypography`.
 | Spacing inconsistent between stories | Ad-hoc margins, no rhythm | Systematise spacing |
 | Long article has no wayfinding | No subheads or progress cue | Add structural subheads |
 | Heading breaks to a one-word line | No wrap control | `text-wrap: balance` |
+| Paragraph spacing feels arbitrary next to heading spacing | Browser default `1em` margin, unrelated to the line-height unit | Set spacing as a multiple of the rhythm unit |
+| Wrapped subhead reads as two stacked headings | Oversized `line-height` used for air instead of margin | Recompute `line-height` to the rhythm unit; add air via margin |
+| Caption legible in the design file, not on screen | Sized to a print convention (6–8pt) | ~12px floor on screen, verified at real DPI |
 
 ## 6. Evaluation procedure
 
@@ -220,14 +259,21 @@ Tested: shortest <pass/fail> · longest <pass/fail> · missing-devices <pass/fai
 - Latin, *Better Web Typography* — page composition, vertical rhythm, heading
   relationships, drop caps.
 - Santa Maria, *On Web Typography* — matching type to content and tone;
-  understanding reading behavior; art direction.
+  understanding reading behavior; art direction; captions illegible on screen at
+  print sizes (6–8pt), ~12px as the web floor; subheads and bylines tying into the
+  headline's system at a smaller size to signal "part of, but subordinate to."
 - Rutter, *Web Typography* — "establish the semantics up front"; mark the opening of
   each passage; a standfirst should stand first; demarcate paragraphs appropriately
   (indent at least 1em, separate by no more than 1em); don't use stylised paragraph
   breaks without good reason; not all block quotes need to look like pull-quotes;
   treat lists as text to be read; make links clear but unobtrusive; avoid underlines
   for emphasis; avoid faux bolds and italics; implement drop caps accurately or not
-  at all.
+  at all; **applying vertical rhythm** — setting a base rhythm unit from the body
+  line-height in pixels, spacing paragraphs by that unit rather than the browser
+  default, recomputing `line-height` for off-size elements (headings, asides) to
+  still land on a multiple of the unit, letting embedded media break the rhythm
+  deliberately, and not forcing a print baseline grid onto a browser's top-down
+  block layout.
 - Hochuli, *Detail in Typography* — paragraph texture, indentation, and the reading
   process that editorial devices must not disrupt.
 - Elam, *Typographic Systems of Design* — structural systems for composition; see

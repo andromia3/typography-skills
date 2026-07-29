@@ -9,10 +9,19 @@ Webfonts are render-blocking-adjacent resources that change text metrics when th
 arrive. Two separate problems: **when text becomes visible**, and **whether the
 page moves when the font swaps**.
 
-⚠️ **The corpus is obsolete here.** Rutter (2017) describes `font-display` as "a
-nascent CSS property under development" and both Rutter and Santa Maria recommend
-Web Font Loader. Superseded. Source-hierarchy rule 1 (browser behavior) outranks
-rules 4 and 8. Verify against MDN before emitting code.
+⚠️ **Part of the corpus is obsolete here — but not all of it.** Rutter (2017)
+calls `font-display` "a nascent CSS property under development," supported only
+behind experimental flags at the time; that support status is obsolete —
+`font-display` now has universal support and is the standard mechanism. His
+five-value taxonomy and their descriptions (`auto`/`block`/`swap`/`fallback`/
+`optional`), however, match the current spec closely and are still accurate —
+don't discard the substance along with the outdated adoption note. What's
+genuinely dead is the workaround the books reach for instead: the Font Loading
+API + `wf-loading`/`wf-active`/`wf-inactive` classes (Rutter) and Web Font Loader
+(both Rutter and Santa Maria) exist specifically to fake `font-display` behavior
+in browsers that don't support it. No browser needs that workaround now.
+Source-hierarchy rule 1 (browser behavior) outranks rules 4 and 8. Verify against
+MDN before emitting code.
 
 ## 1. When to invoke
 
@@ -63,6 +72,16 @@ Default to `swap` for body text. Use `optional` when CLS matters more than seein
 the intended face on first visit — with `optional` the font is used on subsequent
 visits from cache, so the cost is first-paint only.
 
+A general target worth naming: Rutter frames the underlying goal as delivering a
+*usable* page within about one second — fonts shouldn't be what blows that budget.
+Note also that Rutter's own recommended default for body text is `fallback`, not
+`swap`: it still gives the webfont a brief window to arrive before committing to
+the fallback, at the cost of occasionally never swapping at all if the font is
+slow. `swap`'s guarantee of an eventual (possibly disruptive) swap is why current
+guidance treats it as the safer general default — but `fallback` is a legitimate,
+deliberate choice where a mid-read swap is worse than staying on the fallback
+face, and worth reaching for rather than treating `swap` as the only option.
+
 **Killing swap CLS with metric-matched fallbacks.** This is the current technique
 and the one the books predate. Declare a fallback `@font-face` over a local font
 and override its metrics so the fallback occupies exactly the space the webfont
@@ -105,6 +124,20 @@ relying on it. Prefer `size-adjust` + the metric-override descriptors as the pri
 technique; reach for `font-size-adjust` when you want apparent-size normalisation
 without touching the line box.
 
+**Choosing which system font to fall back to.** Metric-matched `size-adjust`
+overrides fix the box a fallback occupies, but they don't fix a badly *chosen*
+fallback — that's a separate, earlier decision (Rutter). Pick the candidate by
+eye before tuning its metrics:
+
+1. **Legibility and apparent size first** — a similar x-height so the fallback
+   doesn't read as a different, worse-tuned typeface during its window on screen.
+2. **Horizontal metrics next** — an economical webfont needs an economical
+   fallback, or the reflow the metric overrides are trying to prevent shows up
+   anyway in word-wrap differences.
+3. **Stylistic match last** — compare the fallback and webfont's `G`, `W`, `a`,
+   `y`, and `g`; those letters vary the most between faces and are where a
+   mismatch is most visible mid-swap.
+
 **Subsetting.** Cut to the scripts and characters you actually use — but never
 subset away characters real content needs. User-generated content, names, and
 currency symbols routinely break naive Latin-only subsets. `unicode-range` lets you
@@ -130,6 +163,7 @@ it and you download the file twice.
 |---|---|---|
 | Text invisible for seconds | `font-display: block`/`auto` | `swap` or `optional` |
 | Page jumps when font arrives | Metric mismatch with fallback | Metric-matched fallback `@font-face` |
+| Fallback still looks visibly wrong even after metric-matching | Fallback face itself picked without comparison | Choose by x-height, horizontal metrics, then G/W/a/y/g before tuning metrics |
 | Font downloaded twice | `preload` without `crossorigin` | Add it |
 | Huge payload | Shipping unused weights/styles | Ship only what renders |
 | Preloading many fonts, render still slow | Preload competing with critical resources | Preload ≤2 critical files |
@@ -206,7 +240,13 @@ Tested: slow-3G <pass/fail> · fonts-blocked <pass/fail>
   [web.dev — optimize web fonts](https://web.dev/learn/performance/optimize-web-fonts).
   [Chrome for Developers — improved font fallbacks](https://developer.chrome.com/blog/font-fallbacks).
 - Rutter, *Web Typography* — FOIT and FOUT defined and named; the tradeoff between
-  them; font loading strategy. **Its `font-display` status note is obsolete.**
+  them; font loading strategy; the general one-second usable-page target; the
+  five `font-display` values and their behavior (**still accurate**, only the
+  "nascent/experimental support" framing is obsolete); recommending `fallback`
+  over `swap` for body text specifically; choosing a fallback system font by
+  x-height, horizontal metrics, then G/W/a/y/g letterform comparison, before
+  applying metric overrides. **Its Font Loading API / `wf-active` class
+  workaround is obsolete** now that `font-display` has universal support.
 - Santa Maria, *On Web Typography* — FOUT; severity scales with how far the webfont
   diverges from the fallback (still true, and the basis for metric matching).
   **Its Web Font Loader recommendation is obsolete.**
